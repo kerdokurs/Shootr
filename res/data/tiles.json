@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Error 1",
+    "id": 0,
+    "texture": [3, 1],
+    "solid": false
+  },
+  {
+    "name": "Error 2",
+    "id": 1,
+    "texture": [3, 2],
+    "solid": false
+  },
+  {
+    "name": "Air",
+    "id": 2,
+    "texture": [0, 0],
+    "solid": false
+  },
+  {
+    "name": "Stone wall",
+    "id": 3,
+    "texture": [1, 0],
+    "solid": true
+  },
+  {
+    "name": "Stone path",
+    "id": 4,
+    "texture": [2, 0],
+    "solid": false
+  },
+  {
+    "name": "Grass",
+    "id": 5,
+    "texture": [3, 0],
+    "solid": false
+  },
+  {
+    "name": "Dirt",
+    "id": 6,
+    "texture": [4, 0],
+    "solid": false
+  },
+  {
+    "name": "Water",
+    "id": 7,
+    "texture": [4, 1],
+    "solid": false
+  }
+]

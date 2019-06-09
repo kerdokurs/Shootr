@@ -3,7 +3,6 @@ package me.kerdo.shootr.worlds;
 import java.awt.Graphics;
 import java.io.PrintWriter;
 
-import me.kerdo.shootr.entity.EntityManager;
 import me.kerdo.shootr.entity.creature.Enemy;
 import me.kerdo.shootr.entity.creature.Player;
 import me.kerdo.shootr.entity.statik.Post;

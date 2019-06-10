@@ -1,0 +1,25 @@
+[
+  {
+    "id": 0,
+    "name": "Legendary Test Item",
+    "description": "Item of Legendary",
+    "tooltip": "Testing",
+    "spritesheet": {
+      "name": "items",
+      "coords": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "size": [
+        32,
+        32
+      ]
+    }
+  }
+]

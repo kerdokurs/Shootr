@@ -33,7 +33,6 @@ public class KeyManager implements KeyListener {
     if (e.getKeyCode() < 0 || e.getKeyCode() >= keys.length)
       return;
     keys[e.getKeyCode()] = true;
-    System.out.println("PRESSED: " + e.getKeyCode());
   }
 
   @Override

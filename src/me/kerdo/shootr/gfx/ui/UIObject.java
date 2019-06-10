@@ -1,16 +1,21 @@
 package me.kerdo.shootr.gfx.ui;
 
+import me.kerdo.shootr.Handler;
+
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
 
 public abstract class UIObject {
+  protected final Handler handler;
+
   protected int x, y;
   protected int width, height;
   protected Rectangle bounds;
   protected boolean visible = true, hovering = false;
 
-  public UIObject(final int x, final int y, final int width, final int height) {
+  public UIObject(final Handler handler, final int x, final int y, final int width, final int height) {
+    this.handler = handler;
     this.x = x;
     this.y = y;
     this.width = width;

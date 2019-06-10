@@ -2,7 +2,7 @@ package me.kerdo.shootr.entity;
 
 import me.kerdo.shootr.Handler;
 
-import java.awt.Graphics;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.ConcurrentModificationException;
@@ -52,7 +52,6 @@ public class EntityManager {
           continue;
 
         e.render(g);
-        e.displayHealth(g);
       }
     } catch (ConcurrentModificationException e) {
       return;

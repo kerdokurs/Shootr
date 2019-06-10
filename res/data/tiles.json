@@ -1,50 +1,80 @@
 [
   {
-    "name": "Error 1",
+    "name": "Error",
     "id": 0,
-    "texture": [3, 1],
+    "texture": [
+      0,
+      0
+    ],
     "solid": false
   },
   {
-    "name": "Error 2",
+    "name": "Stone wall 1",
     "id": 1,
-    "texture": [3, 2],
-    "solid": false
-  },
-  {
-    "name": "Air",
-    "id": 2,
-    "texture": [0, 0],
-    "solid": false
-  },
-  {
-    "name": "Stone wall",
-    "id": 3,
-    "texture": [1, 0],
+    "texture": [
+      1,
+      0
+    ],
     "solid": true
   },
   {
-    "name": "Stone path",
+    "name": "Stone wall 2",
+    "id": 2,
+    "texture": [
+      2,
+      0
+    ],
+    "solid": true
+  },
+  {
+    "name": "Stone wall 3",
+    "id": 3,
+    "texture": [
+      3,
+      0
+    ],
+    "solid": true
+  },
+  {
+    "name": "Stone wall 4",
     "id": 4,
-    "texture": [2, 0],
-    "solid": false
+    "texture": [
+      4,
+      0
+    ],
+    "solid": true
   },
   {
-    "name": "Grass",
+    "name": "Cornerstone UL",
     "id": 5,
-    "texture": [3, 0],
-    "solid": false
+    "texture": [
+      1,
+      1
+    ],
+    "solid": true
   },
   {
-    "name": "Dirt",
+    "name": "Cornerstone UR",
     "id": 6,
-    "texture": [4, 0],
-    "solid": false
+    "texture": [
+      2,
+      1
+    ],
+    "solid": true
   },
   {
-    "name": "Water",
+    "name": "Cornerstone DR",
     "id": 7,
+    "texture": [
+      3,
+      1
+    ],
+    "solid": true
+  },
+  {
+    "name": "Cornerstone DL",
+    "id": 8,
     "texture": [4, 1],
-    "solid": false
+    "solid": true
   }
 ]

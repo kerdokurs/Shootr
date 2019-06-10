@@ -3,14 +3,24 @@ package me.kerdo.shootr.entity.creature;
 import me.kerdo.shootr.Handler;
 import me.kerdo.shootr.gfx.Assets;
 import me.kerdo.shootr.gfx.Text;
+import me.kerdo.shootr.gfx.ui.inventory.Inventory;
 import me.kerdo.shootr.world.Tile;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
 
 public class Player extends Creature {
+  private BufferedImage texture;
+  private Inventory inventory;
+
   public Player(final Handler handler, final float x, final float y) {
-    super(handler, x, y, Creature.DEFAULT_WIDTH, Creature.DEFAULT_HEIGHT, 100);
+    super(handler, x, y, DEFAULT_WIDTH, DEFAULT_HEIGHT, 100);
+    texture = Assets.spritesheets.get("default").crop32(0, 1);
+
+    handler.getWorld().setPlayer(this);
+
+    inventory = new Inventory(handler, handler.getWidth() - Inventory.WIDTH - 20, handler.getHeight() - Inventory.HEIGHT - 20, Inventory.WIDTH, Inventory.HEIGHT);
   }
 
   public void getInput() {
@@ -24,23 +34,29 @@ public class Player extends Creature {
     if (handler.getKeyManager().isKeyPressed(KeyEvent.VK_LEFT))
       xMove = -speed;
     if (handler.getKeyManager().isKeyPressed(KeyEvent.VK_RIGHT))
-      xMove = speed;
+      xMove = +speed;
+
+    if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_E))
+      inventory.setVisible(!inventory.isVisible());
   }
 
   @Override
   public void tick(final double dt) {
     getInput();
-    move();
+    move(dt);
     handler.getCamera().centerOnEntity(this);
   }
 
   @Override
   public void render(final Graphics g) {
-    g.drawImage(Assets.get("player"), (int) (x - handler.getCamera().getxOff()), (int) (y - handler.getCamera().getyOff()), width, height, null);
+    g.drawImage(texture, (int) (x - handler.getCamera().getxOff()), (int) (y - handler.getCamera().getyOff()), width, height, null);
+
     g.setColor(Color.WHITE);
     g.drawLine((int) (x - handler.getCamera().getxOff() + width / 2),
             (int) (y - handler.getCamera().getyOff() + height / 2), handler.getGame().getMouseManager().getMouseX(),
             handler.getGame().getMouseManager().getMouseY());
+
+    g.drawRect((int) (x - handler.getCamera().getxOff() - bounds.x), (int) (y - handler.getCamera().getyOff() - bounds.y), bounds.width, bounds.height);
 
     Text.drawString(g, "Block: " + handler.getWorld().getTile(
             (int) ((handler.getMouseManager().getMouseX() + handler.getCamera().getxOff()) / Tile.TILE_WIDTH),
@@ -53,11 +69,13 @@ public class Player extends Creature {
   }
 
   public void postRender(final Graphics g) {
-
   }
 
   @Override
   public void die() {
+  }
 
+  public Inventory getInventory() {
+    return inventory;
   }
 }

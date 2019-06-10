@@ -1,0 +1,17 @@
+Shootr:
+  Gameplay:
+    ☐ Weapons
+    ☐ Items
+    ☐ Characters
+    ☐ Worlds
+    ☐ Multiplayer
+  Graphics:
+    ☐ Tiles
+    ☐ Items
+    ☐ Characters
+  Inventory:
+    ☐ Functional buttons (sort, etc.)
+  Assets:
+    ☐ Dynamically load spritesheets
+  Tiles:
+    ☐ Add dynamic spritesheets

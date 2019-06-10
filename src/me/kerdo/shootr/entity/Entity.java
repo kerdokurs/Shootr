@@ -1,8 +1,6 @@
 package me.kerdo.shootr.entity;
 
 import me.kerdo.shootr.Handler;
-import me.kerdo.shootr.gfx.Assets;
-import me.kerdo.shootr.gfx.Text;
 
 import java.awt.*;
 
@@ -37,11 +35,6 @@ public abstract class Entity {
   public abstract void render(final Graphics g);
 
   public abstract void die();
-
-  public void displayHealth(final Graphics g) {
-    Text.drawString(g, health + "/" + maxHealth, (int) (x - handler.getCamera().getxOff() + 5), (int) (y - handler.getCamera().getyOff() + 15), false, Color.WHITE, Assets.andy16);
-  }
-
   public void hurt(final int dmg) {
     health -= dmg;
     if (health <= 0) {

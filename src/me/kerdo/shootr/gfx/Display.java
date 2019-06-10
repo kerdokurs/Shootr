@@ -57,4 +57,8 @@ public class Display {
   public JFrame getFrame() {
     return frame;
   }
+
+  public void setCursor(final Cursor cursor) {
+    frame.setCursor(cursor);
+  }
 }

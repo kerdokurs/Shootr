@@ -1,21 +1,18 @@
 package me.kerdo.shootr;
 
-import me.kerdo.shootr.gfx.*;
-import me.kerdo.shootr.gfx.ui.*;
+import me.kerdo.shootr.gfx.Assets;
+import me.kerdo.shootr.gfx.Camera;
+import me.kerdo.shootr.gfx.Display;
+import me.kerdo.shootr.gfx.Text;
 import me.kerdo.shootr.input.KeyManager;
 import me.kerdo.shootr.input.MouseManager;
+import me.kerdo.shootr.item.Item;
 import me.kerdo.shootr.menu.GameMenu;
-import me.kerdo.shootr.menu.MainMenu;
-import me.kerdo.shootr.menu.Menu;
 import me.kerdo.shootr.menu.MenuManager;
 import me.kerdo.shootr.world.Tile;
-import me.kerdo.shootr.world.World;
 
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseWheelEvent;
 import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
 
 public class Game implements Runnable {
   // Thread and class handling
@@ -31,11 +28,8 @@ public class Game implements Runnable {
   private final KeyManager keyManager;
   private final MouseManager mouseManager;
 
-  // UI
-  private UIManager uiManager;
-
   // Menu
-  private final MenuManager menuManager = new MenuManager();
+  private final MenuManager menuManager;
 
   // Graphics
   private BufferStrategy bs;
@@ -46,6 +40,10 @@ public class Game implements Runnable {
   // Misc
   private double fps;
 
+  // Cursor
+  private Toolkit toolkit = Toolkit.getDefaultToolkit();
+  private Cursor cursor;
+
   public Game(final String title, final int width, final int height) {
     this.title = title;
     this.width = width;
@@ -55,6 +53,7 @@ public class Game implements Runnable {
 
     keyManager = new KeyManager();
     mouseManager = new MouseManager();
+    menuManager = new MenuManager(handler, mouseManager);
   }
 
   private void init() {
@@ -62,28 +61,25 @@ public class Game implements Runnable {
     display.setListeners(keyManager, mouseManager);
     Assets.init();
     Tile.init();
+    Item.init(handler);
 
-    // TODO: Add custom cursor
+    cursor = toolkit.createCustomCursor(Assets.cursor, new Point(0, 0), "img");
+    display.setCursor(cursor);
 
     camera = new Camera(handler, 0, 0);
 
-    // TODO: Add separate UIManager for each menu
-    uiManager = new UIManager();
-
-    // UI initialization
-
-    mouseManager.setUiManager(uiManager);
-
     menuManager.setMenu(new GameMenu(handler));
+
+    handler.getGame().getMenuManager().getMenu().getUiManager().addObject(handler.getWorld().getPlayer().getInventory());
   }
 
   private void tick(final double dt) {
     keyManager.tick();
 
-    if (menuManager.getMenu() != null)
+    if (menuManager.getMenu() != null) {
       menuManager.getMenu().tick(dt);
-
-    uiManager.tick(dt);
+      menuManager.getMenu().getUiManager().tick(dt);
+    }
   }
 
   private void render() {
@@ -99,12 +95,12 @@ public class Game implements Runnable {
 
     // Rendering
 
-    if (menuManager.getMenu() != null)
+    if (menuManager.getMenu() != null) {
       menuManager.getMenu().render(g);
+      menuManager.getMenu().getUiManager().render(g);
+    }
 
     Text.drawString(g, "FPS: " + (int) fps, 15, 20, false, Color.WHITE, Assets.andy16);
-
-    uiManager.render(g);
 
     bs.show();
     g.dispose();
@@ -116,6 +112,9 @@ public class Game implements Runnable {
     long now, lastTime = System.nanoTime();
     double delta;
 
+    final int RENDER_TIME = 50;
+    int renderTimer = 0;
+
     while (!shouldClose) {
       // Delta time and framerate calculation
       now = System.nanoTime();
@@ -125,7 +124,13 @@ public class Game implements Runnable {
 
       // Updating and rendering
       tick(delta);
-      render();
+
+      // Rendering every renderTime updates
+      renderTimer++;
+      if (renderTimer == RENDER_TIME) {
+        renderTimer = 0;
+        render();
+      }
     }
   }
 
@@ -167,5 +172,9 @@ public class Game implements Runnable {
 
   public MouseManager getMouseManager() {
     return mouseManager;
+  }
+
+  public MenuManager getMenuManager() {
+    return menuManager;
   }
 }

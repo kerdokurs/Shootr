@@ -1,6 +1,9 @@
 package me.kerdo.shootr.world;
 
-import com.google.gson.*;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import me.kerdo.shootr.gfx.Assets;
 import me.kerdo.shootr.utils.Utils;
 
@@ -51,7 +54,8 @@ public class Tile {
       final int textX = textCoords.get(0).getAsInt(),
               textY = textCoords.get(1).getAsInt();
 
-      new Tile(name, id, Assets.spritesheet.crop32(textX, textY), solid);
+
+      new Tile(name, id, Assets.spritesheets.get("default").crop32(textX, textY), solid);
     });
   }
 

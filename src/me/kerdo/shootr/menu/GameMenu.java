@@ -13,6 +13,7 @@ public class GameMenu extends Menu {
     super(handler);
     world = new World(handler);
     handler.setWorld(world);
+
     world.getEntityManager().addEntity(new Player(handler, 200, 200));
   }
 

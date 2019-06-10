@@ -1,5 +1,6 @@
 package me.kerdo.shootr.gfx.ui;
 
+import me.kerdo.shootr.Handler;
 import me.kerdo.shootr.gfx.Text;
 
 import java.awt.*;
@@ -12,8 +13,8 @@ public class UITextButton extends UIButton {
   private final Font font;
 
   // TODO: Use dynamic sizing according to text.
-  public UITextButton(final int x, final int y, final int width, final int height, final UIClickable clickable, final String text, final Color[] colors, final Font font) {
-    super(x, y, width, height, clickable);
+  public UITextButton(final Handler handler, final int x, final int y, final int width, final int height, final UIClickable clickable, final String text, final Color[] colors, final Font font) {
+    super(handler, x, y, width, height, clickable);
 
     this.text = text;
     this.colors = colors;

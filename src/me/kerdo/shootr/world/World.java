@@ -2,6 +2,7 @@ package me.kerdo.shootr.world;
 
 import me.kerdo.shootr.Handler;
 import me.kerdo.shootr.entity.EntityManager;
+import me.kerdo.shootr.entity.creature.Player;
 import me.kerdo.shootr.utils.Utils;
 
 import java.awt.*;
@@ -10,6 +11,7 @@ public class World {
   private final Handler handler;
 
   private EntityManager entityManager;
+  private Player player;
 
   private int width, height;
 
@@ -80,5 +82,13 @@ public class World {
 
   public EntityManager getEntityManager() {
     return entityManager;
+  }
+
+  public Player getPlayer() {
+    return player;
+  }
+
+  public void setPlayer(final Player player) {
+    this.player = player;
   }
 }

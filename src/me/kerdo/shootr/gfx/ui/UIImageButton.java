@@ -1,16 +1,19 @@
 package me.kerdo.shootr.gfx.ui;
 
+import me.kerdo.shootr.Handler;
+
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
 import java.awt.image.BufferedImage;
-import java.nio.Buffer;
 
 public class UIImageButton extends UIButton {
-  private BufferedImage[] frames;
+  protected BufferedImage[] frames;
+  protected String tooltip;
 
-  public UIImageButton(final int x, final int y, final int width, final int height, final UIClickable clickable, final BufferedImage[] frames) {
-    super(x, y, width, height, clickable);
+  public UIImageButton(final Handler handler, final int x, final int y, final int width, final int height, final UIClickable clickable, final BufferedImage[] frames, final String tooltip) {
+    super(handler, x, y, width, height, clickable);
+    this.tooltip = tooltip;
 
     this.frames = frames;
   }

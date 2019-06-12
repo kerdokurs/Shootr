@@ -62,4 +62,8 @@ public class UIImageButton extends UIButton {
   public void setFrames(final BufferedImage[] frames) {
     this.frames = frames;
   }
+
+  public String getTooltip() {
+    return tooltip;
+  }
 }

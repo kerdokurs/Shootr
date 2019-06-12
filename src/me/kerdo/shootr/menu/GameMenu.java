@@ -1,6 +1,7 @@
 package me.kerdo.shootr.menu;
 
 import me.kerdo.shootr.Handler;
+import me.kerdo.shootr.entity.character.Character;
 import me.kerdo.shootr.entity.creature.Player;
 import me.kerdo.shootr.world.World;
 
@@ -14,7 +15,9 @@ public class GameMenu extends Menu {
     world = new World(handler);
     handler.setWorld(world);
 
-    world.getEntityManager().addEntity(new Player(handler, 200, 200));
+    world.getEntityManager().addEntity(new Player(handler, 200, 200, Character.CHARACTERS[0]));
+    uiManager.addObject(handler.getWorld().getPlayer().getInventory());
+    uiManager.addObject(handler.getWorld().getPlayer().getWeaponInventory());
   }
 
   @Override

@@ -76,5 +76,14 @@
     "id": 8,
     "texture": [4, 1],
     "solid": true
+  },
+  {
+    "name": "Grass",
+    "id": 9,
+    "texture": [
+      0,
+      2
+    ],
+    "solid": false
   }
 ]

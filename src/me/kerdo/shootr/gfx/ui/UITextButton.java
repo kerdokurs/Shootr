@@ -28,7 +28,7 @@ public class UITextButton extends UIButton {
 
   @Override
   public void render(final Graphics g) {
-    Text.drawString(g, text, (x - width / 2), (y - height / 2), true, colors[hovering ? 1 : 0], font);
+    Text.drawString(g, text, (x + width / 2), (y + height / 2), true, colors[hovering ? 1 : 0], font);
   }
 
   @Override

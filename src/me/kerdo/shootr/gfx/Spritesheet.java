@@ -3,7 +3,7 @@ package me.kerdo.shootr.gfx;
 import java.awt.image.BufferedImage;
 
 public class Spritesheet {
-  private BufferedImage sheet;
+  private final BufferedImage sheet;
 
   public Spritesheet(final BufferedImage sheet) {
     this.sheet = sheet;
@@ -23,5 +23,9 @@ public class Spritesheet {
 
   public BufferedImage crop16(final int x, final int y) {
     return sheet.getSubimage(x * 16, y * 16, 16, 16);
+  }
+
+  public BufferedImage getSheet() {
+    return sheet;
   }
 }

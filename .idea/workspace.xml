@@ -5,24 +5,34 @@
       <artifact name="Shootr:jar" />
     </artifacts-to-build>
   </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/me/kerdo/shootr/weapon/Weapon.java" line="69" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="1178c4de-4fc9-4647-9d7a-307d928194dd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Shootr_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Shootr_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.todo" beforeDir="false" afterPath="$PROJECT_DIR$/.todo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shootr/me/kerdo/shootr/entity/creature/Creature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shootr/me/kerdo/shootr/entity/creature/Creature.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shootr/me/kerdo/shootr/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shootr/me/kerdo/shootr/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Shootr/me/kerdo/shootr/entity/creature/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shootr/me/kerdo/shootr/entity/creature/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shootr/me/kerdo/shootr/gfx/Assets.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shootr/me/kerdo/shootr/gfx/Assets.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/data/weapons.json" beforeDir="false" afterPath="$PROJECT_DIR$/res/data/weapons.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/textures/weapons.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/textures/weapons.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/textures/stamina.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/textures/stamina.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/kerdo/shootr/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/kerdo/shootr/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/kerdo/shootr/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/kerdo/shootr/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/kerdo/shootr/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/kerdo/shootr/entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/kerdo/shootr/entity/EntityManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/kerdo/shootr/entity/EntityManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/me/kerdo/shootr/entity/creature/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/kerdo/shootr/entity/creature/Creature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/kerdo/shootr/entity/creature/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/kerdo/shootr/entity/creature/Enemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/me/kerdo/shootr/entity/creature/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/kerdo/shootr/entity/creature/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/kerdo/shootr/gfx/Assets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/kerdo/shootr/gfx/Assets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/kerdo/shootr/gfx/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/kerdo/shootr/gfx/Camera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/me/kerdo/shootr/gfx/ui/inventory/weapons/WeaponInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/kerdo/shootr/gfx/ui/inventory/weapons/WeaponInventory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/me/kerdo/shootr/gfx/ui/inventory/weapons/WeaponInventorySlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/kerdo/shootr/gfx/ui/inventory/weapons/WeaponInventorySlot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/kerdo/shootr/weapons/MeleeWeapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/kerdo/shootr/weapons/MeleeWeapon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/kerdo/shootr/weapons/RangedWeapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/kerdo/shootr/weapons/RangedWeapon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/kerdo/shootr/weapons/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/kerdo/shootr/weapons/Weapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/kerdo/shootr/menu/GameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/kerdo/shootr/menu/GameMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/kerdo/shootr/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/kerdo/shootr/utils/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/kerdo/shootr/weapons/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/kerdo/shootr/weapon/Bullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/kerdo/shootr/weapons/BulletManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/kerdo/shootr/weapon/BulletManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/kerdo/shootr/weapons/MeleeWeapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/kerdo/shootr/weapon/MeleeWeapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/kerdo/shootr/weapons/RangedWeapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/kerdo/shootr/weapon/RangedWeapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/kerdo/shootr/weapons/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/kerdo/shootr/weapon/Weapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/kerdo/shootr/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/kerdo/shootr/world/World.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,26 +63,32 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/entity/creature/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+            <state relative-caret-position="242">
+              <caret line="102" column="76" selection-start-line="102" selection-start-column="76" selection-end-line="102" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#15650#15651#0" expanded="true" />
-                <element signature="e#15731#15732#0" expanded="true" />
-                <element signature="e#15787#15788#0" expanded="true" />
-                <element signature="e#15870#15871#0" expanded="true" />
-                <element signature="e#15933#15934#0" expanded="true" />
-                <element signature="e#16026#16027#0" expanded="true" />
+                <element signature="e#16895#16896#0" expanded="true" />
+                <element signature="e#16921#16922#0" expanded="true" />
+                <element signature="e#16970#16971#0" expanded="true" />
+                <element signature="e#17002#17003#0" expanded="true" />
+                <element signature="e#17034#17035#0" expanded="true" />
+                <element signature="e#17058#17059#0" expanded="true" />
+                <element signature="e#17109#17110#0" expanded="true" />
+                <element signature="e#17141#17142#0" expanded="true" />
+                <element signature="e#17178#17179#0" expanded="true" />
+                <element signature="e#17204#17205#0" expanded="true" />
+                <element signature="e#17255#17256#0" expanded="true" />
+                <element signature="e#17297#17298#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/gfx/ui/inventory/weapons/WeaponInventory.java">
+        <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/world/World.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="224">
+              <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,10 +97,43 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/gfx/ui/inventory/weapons/WeaponInventorySlot.java">
+        <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/entity/EntityManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="688">
+              <caret line="53" column="45" lean-forward="true" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/menu/GameMenu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/menu/MainMenu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/utils/save/SaveWeapon.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="359">
+              <caret line="44" column="48" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -95,8 +144,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/entity/creature/Creature.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-224">
-              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+            <state relative-caret-position="224">
+              <caret line="14" column="69" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,34 +154,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/entity/Entity.java">
+        <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-              <folding>
-                <element signature="e#1625#1626#0" expanded="true" />
-                <element signature="e#1682#1683#0" expanded="true" />
-                <element signature="e#1725#1726#0" expanded="true" />
-                <element signature="e#1782#1783#0" expanded="true" />
-                <element signature="e#1831#1832#0" expanded="true" />
-                <element signature="e#1882#1883#0" expanded="true" />
-                <element signature="e#1933#1934#0" expanded="true" />
-                <element signature="e#2002#2003#0" expanded="true" />
-                <element signature="e#2059#2060#0" expanded="true" />
-                <element signature="e#2146#2147#0" expanded="true" />
-                <element signature="e#2203#2204#0" expanded="true" />
-                <element signature="e#2278#2279#0" expanded="true" />
-                <element signature="e#2332#2333#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/entity/creature/Enemy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="183">
+              <caret line="76" selection-start-line="76" selection-end-line="76" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -141,33 +166,16 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/gfx/Assets.java">
+        <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/weapon/Weapon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+            <state relative-caret-position="-153">
+              <caret line="77" column="32" lean-forward="true" selection-start-line="77" selection-start-column="32" selection-end-line="77" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/audio/Audio.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="8" column="22" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/weapons/Weapon.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="81" column="73" lean-forward="true" selection-start-line="81" selection-start-column="73" selection-end-line="81" selection-end-column="73" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#4848#4849#0" expanded="true" />
+                <element signature="e#4872#4873#0" expanded="true" />
+                <element signature="e#4790#4791#0" expanded="true" />
+                <element signature="e#4818#4819#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -202,6 +210,8 @@
       <find>0</find>
       <find>VK_Q</find>
       <find>checkEntityCollisions</find>
+      <find>getUseTime()</find>
+      <find>totalBullets</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -217,6 +227,7 @@
       <replace>playGroup</replace>
       <replace>true</replace>
       <replace>9</replace>
+      <replace>bullets</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -230,22 +241,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/gfx/ui/Character.java" />
-        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/gfx/ui/CharacterEquipment.java" />
-        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/gfx/ui/UITextButton.java" />
-        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/menu/SettingsMenuImpl.java" />
-        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/menu/SettingsMenu.java" />
-        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/gfx/ui/UIObjectGroup.java" />
-        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/gfx/Text.java" />
-        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/menu/MenuImpl.java" />
-        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/menu/LoadMenu.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/menu/MultiplayerMenu.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/gfx/Spritesheet.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/entity/CharacterDirections.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/entity/CharacterAnimationProperties.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/entity/Character.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/gfx/ui/UIAnimation.java" />
-        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/Launcher.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/menu/MainMenu.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/gfx/Animation.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/menu/NewMenu.java" />
@@ -256,30 +257,40 @@
         <option value="$PROJECT_DIR$/res/worlds/world1.txt" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/entity/character/Stats.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/entity/character/Stamina.java" />
-        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/utils/Utils.java" />
-        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/world/World.java" />
-        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/menu/GameMenu.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/gfx/ui/UIManager.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/gfx/ui/UIImage.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/weapons/Bullet.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/weapons/BulletManager.java" />
-        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/Game.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/net/Client.java" />
         <option value="$PROJECT_DIR$/Server.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/entity/creature/Entity.java" />
-        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/entity/EntityManager.java" />
-        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/entity/Entity.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/menu/LevelEditorMenu.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/entity/creature/Enemy.java" />
-        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/entity/creature/Creature.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/Audio.java" />
-        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/gfx/Assets.java" />
-        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/weapons/RangedWeapon.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/weapons/MeleeWeapon.java" />
-        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/weapons/Weapon.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/gfx/ui/inventory/weapons/WeaponInventory.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/gfx/ui/inventory/weapons/WeaponInventorySlot.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/audio/Audio.java" />
+        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/Launcher.java" />
+        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/weapons/Weapon.java" />
+        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/weapons/RangedWeapon.java" />
+        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/utils/SaveObject.java" />
+        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/utils/SavePlayer.java" />
+        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/gfx/Assets.java" />
+        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/utils/save/SaveWeaponTexture.java" />
+        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/weapon/RangedWeapon.java" />
+        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/weapon/MeleeWeapon.java" />
+        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/weapon/Weapon.java" />
+        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/entity/Entity.java" />
+        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/entity/creature/Creature.java" />
+        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/world/World.java" />
+        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/gfx/Camera.java" />
+        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/utils/Utils.java" />
+        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/utils/save/SavePlayer.java" />
+        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/Game.java" />
+        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/menu/GameMenu.java" />
+        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/utils/save/SaveWeapon.java" />
+        <option value="$PROJECT_DIR$/src/me/kerdo/shootr/entity/EntityManager.java" />
         <option value="$PROJECT_DIR$/src/me/kerdo/shootr/entity/creature/Player.java" />
       </list>
     </option>
@@ -339,6 +350,28 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="shootr" type="462c0819:PsiDirectoryNode" />
               <item name="menu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shootr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shootr" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="shootr" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shootr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shootr" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="shootr" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="save" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shootr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shootr" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="shootr" type="462c0819:PsiDirectoryNode" />
+              <item name="weapon" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -426,7 +459,7 @@
       <workItem from="1560154909333" duration="79000" />
       <workItem from="1560155114575" duration="38103000" />
       <workItem from="1560332960417" duration="124000" />
-      <workItem from="1560333770688" duration="43130000" />
+      <workItem from="1560333770688" duration="52574000" />
     </task>
     <task id="LOCAL-00001" summary="Reworked the code.">
       <created>1560109385188</created>
@@ -453,7 +486,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97024000" />
+    <option name="totallyTimeSpent" value="106468000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -468,39 +501,6 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49919486" weight="0.1337953" />
-      <window_info id="Structure" order="1" sideWeight="0.50080514" side_tool="true" weight="0.26586434" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3290461" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.32368702" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3279743" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3290461" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32900432" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.32475883" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3290461" />
-      <window_info anchor="bottom" id="Statistic" order="13" weight="0.3279743" />
-      <window_info anchor="bottom" id="Problems" order="14" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Database" order="5" weight="0.32995737" />
-      <window_info anchor="right" id="Maven" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-    </layout>
-    <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49919486" visible="true" weight="0.1337953" />
       <window_info id="Structure" order="1" sideWeight="0.50080514" side_tool="true" weight="0.26586434" />
       <window_info id="Image Layers" order="2" />
@@ -532,7 +532,7 @@
       <window_info anchor="right" id="Maven" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
-    </layout-to-restore>
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -567,35 +567,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/menu/MenuImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/menu/LoadMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/menu/MultiplayerMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="16" column="11" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_191/src.zip!/java/awt/image/BufferedImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="1201" column="41" selection-start-line="1201" selection-start-column="41" selection-end-line="1201" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/gfx/Text.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/entity/character/Perks.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
@@ -655,23 +626,6 @@
           <folding>
             <element signature="e#649#650#0" expanded="true" />
             <element signature="e#707#708#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/Launcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/menu/MainMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="21" column="75" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -756,20 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/entity/character/Stamina.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="41" lean-forward="true" selection-start-column="41" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/utils/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="51" column="50" selection-start-line="51" selection-start-column="50" selection-end-line="51" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/entity/character/Stats.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -791,16 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/menu/GameMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="71" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="71" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -831,7 +761,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/weapons/BulletManager.java">
+    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/weapon/BulletManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="359">
           <caret line="67" column="20" selection-start-line="67" selection-start-column="20" selection-end-line="67" selection-end-column="20" />
@@ -846,16 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
           <caret line="57" column="53" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="202" column="28" selection-start-line="202" selection-start-column="28" selection-end-line="202" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -885,7 +805,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/weapons/Bullet.java">
+    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/weapon/Bullet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
@@ -920,33 +840,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/world/World.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="53" column="14" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2478#2479#0" expanded="true" />
-            <element signature="e#2508#2509#0" expanded="true" />
-            <element signature="e#2259#2260#0" expanded="true" />
-            <element signature="e#2282#2283#0" expanded="true" />
-            <element signature="e#2330#2331#0" expanded="true" />
-            <element signature="e#2360#2361#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_191/src.zip!/java/awt/Polygon.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-134">
           <caret line="125" column="11" selection-start-line="125" selection-start-column="11" selection-end-line="125" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/entity/EntityManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="37" column="7" lean-forward="true" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -972,80 +869,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/entity/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-          <folding>
-            <element signature="e#1625#1626#0" expanded="true" />
-            <element signature="e#1682#1683#0" expanded="true" />
-            <element signature="e#1725#1726#0" expanded="true" />
-            <element signature="e#1782#1783#0" expanded="true" />
-            <element signature="e#1831#1832#0" expanded="true" />
-            <element signature="e#1882#1883#0" expanded="true" />
-            <element signature="e#1933#1934#0" expanded="true" />
-            <element signature="e#2002#2003#0" expanded="true" />
-            <element signature="e#2059#2060#0" expanded="true" />
-            <element signature="e#2146#2147#0" expanded="true" />
-            <element signature="e#2203#2204#0" expanded="true" />
-            <element signature="e#2278#2279#0" expanded="true" />
-            <element signature="e#2332#2333#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/entity/creature/Creature.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-224">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/weapons/RangedWeapon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-          <folding>
-            <element signature="e#979#980#0" expanded="true" />
-            <element signature="e#1006#1007#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/weapons/MeleeWeapon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
-          <folding>
-            <element signature="e#742#743#0" expanded="true" />
-            <element signature="e#768#769#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/weapons/Weapon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="81" column="73" lean-forward="true" selection-start-line="81" selection-start-column="73" selection-end-line="81" selection-end-column="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/gfx/ui/inventory/weapons/WeaponInventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/gfx/ui/inventory/weapons/WeaponInventorySlot.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -1056,13 +879,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/gfx/Assets.java">
+    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/Launcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="64">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -1073,18 +893,224 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/entity/creature/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/gfx/ui/inventory/weapons/WeaponInventory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+        <state relative-caret-position="112">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#15650#15651#0" expanded="true" />
-            <element signature="e#15731#15732#0" expanded="true" />
-            <element signature="e#15787#15788#0" expanded="true" />
-            <element signature="e#15870#15871#0" expanded="true" />
-            <element signature="e#15933#15934#0" expanded="true" />
-            <element signature="e#16026#16027#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/weapon/MeleeWeapon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#689#690#0" expanded="true" />
+            <element signature="e#711#712#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/entity/character/Stamina.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/utils/save/SaveObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="15" lean-forward="true" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/entity/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1136">
+          <caret line="73" column="3" lean-forward="true" selection-start-line="73" selection-start-column="3" selection-end-line="73" selection-end-column="3" />
+          <folding>
+            <element signature="e#1607#1608#0" expanded="true" />
+            <element signature="e#1625#1626#0" expanded="true" />
+            <element signature="e#1662#1663#0" expanded="true" />
+            <element signature="e#1682#1683#0" expanded="true" />
+            <element signature="e#1707#1708#0" expanded="true" />
+            <element signature="e#1725#1726#0" expanded="true" />
+            <element signature="e#1762#1763#0" expanded="true" />
+            <element signature="e#1782#1783#0" expanded="true" />
+            <element signature="e#1809#1810#0" expanded="true" />
+            <element signature="e#1831#1832#0" expanded="true" />
+            <element signature="e#1859#1860#0" expanded="true" />
+            <element signature="e#1882#1883#0" expanded="true" />
+            <element signature="e#1910#1911#0" expanded="true" />
+            <element signature="e#1933#1934#0" expanded="true" />
+            <element signature="e#1972#1973#0" expanded="true" />
+            <element signature="e#2002#2003#0" expanded="true" />
+            <element signature="e#2033#2034#0" expanded="true" />
+            <element signature="e#2059#2060#0" expanded="true" />
+            <element signature="e#2110#2111#0" expanded="true" />
+            <element signature="e#2146#2147#0" expanded="true" />
+            <element signature="e#2180#2181#0" expanded="true" />
+            <element signature="e#2203#2204#0" expanded="true" />
+            <element signature="e#2248#2249#0" expanded="true" />
+            <element signature="e#2278#2279#0" expanded="true" />
+            <element signature="e#2309#2310#0" expanded="true" />
+            <element signature="e#2332#2333#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/gfx/Camera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/utils/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/utils/save/SavePlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/utils/save/SaveWeaponTexture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/entity/creature/Creature.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="69" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/weapon/Weapon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="77" column="32" lean-forward="true" selection-start-line="77" selection-start-column="32" selection-end-line="77" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4848#4849#0" expanded="true" />
+            <element signature="e#4872#4873#0" expanded="true" />
+            <element signature="e#4790#4791#0" expanded="true" />
+            <element signature="e#4818#4819#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/gfx/Assets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/menu/GameMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/menu/MainMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/weapon/RangedWeapon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/utils/save/SaveWeapon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="44" column="48" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/world/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/entity/EntityManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="688">
+          <caret line="53" column="45" lean-forward="true" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/kerdo/shootr/entity/creature/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="102" column="76" selection-start-line="102" selection-start-column="76" selection-end-line="102" selection-end-column="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#16895#16896#0" expanded="true" />
+            <element signature="e#16921#16922#0" expanded="true" />
+            <element signature="e#16970#16971#0" expanded="true" />
+            <element signature="e#17002#17003#0" expanded="true" />
+            <element signature="e#17034#17035#0" expanded="true" />
+            <element signature="e#17058#17059#0" expanded="true" />
+            <element signature="e#17109#17110#0" expanded="true" />
+            <element signature="e#17141#17142#0" expanded="true" />
+            <element signature="e#17178#17179#0" expanded="true" />
+            <element signature="e#17204#17205#0" expanded="true" />
+            <element signature="e#17255#17256#0" expanded="true" />
+            <element signature="e#17297#17298#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1148,7 +1174,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

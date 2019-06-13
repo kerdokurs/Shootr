@@ -4,7 +4,7 @@ import me.kerdo.shootr.Handler;
 import me.kerdo.shootr.entity.EntityManager;
 import me.kerdo.shootr.entity.creature.Player;
 import me.kerdo.shootr.utils.Utils;
-import me.kerdo.shootr.weapons.BulletManager;
+import me.kerdo.shootr.weapon.BulletManager;
 
 import java.awt.*;
 

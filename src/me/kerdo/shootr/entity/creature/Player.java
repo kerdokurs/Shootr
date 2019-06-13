@@ -1,7 +1,7 @@
 package me.kerdo.shootr.entity.creature;
 
+import com.google.gson.Gson;
 import me.kerdo.shootr.Handler;
-import me.kerdo.shootr.audio.Audio;
 import me.kerdo.shootr.entity.Entity;
 import me.kerdo.shootr.entity.character.Character;
 import me.kerdo.shootr.entity.character.Stamina;
@@ -10,14 +10,21 @@ import me.kerdo.shootr.gfx.Assets;
 import me.kerdo.shootr.gfx.Text;
 import me.kerdo.shootr.gfx.ui.inventory.Inventory;
 import me.kerdo.shootr.gfx.ui.inventory.weapons.WeaponInventory;
+import me.kerdo.shootr.utils.save.SaveObject;
+import me.kerdo.shootr.utils.save.SavePlayer;
 import me.kerdo.shootr.utils.Utils;
-import me.kerdo.shootr.weapons.Bullet;
-import me.kerdo.shootr.weapons.MeleeWeapon;
-import me.kerdo.shootr.weapons.RangedWeapon;
-import me.kerdo.shootr.weapons.Weapon;
+import me.kerdo.shootr.utils.save.SaveWeapon;
+import me.kerdo.shootr.utils.save.SaveWeaponTexture;
+import me.kerdo.shootr.weapon.Bullet;
+import me.kerdo.shootr.weapon.MeleeWeapon;
+import me.kerdo.shootr.weapon.RangedWeapon;
+import me.kerdo.shootr.weapon.Weapon;
 import me.kerdo.shootr.world.Tile;
 
 import java.awt.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 
 import static java.awt.event.KeyEvent.*;
 import static me.kerdo.shootr.entity.character.CharacterAnimationProperties.*;
@@ -43,45 +50,38 @@ public class Player extends Creature {
   private boolean wiCanOpen = true;
 
   private Weapon weapon;
-  private int bullets;
+  private int selectedWeaponIndex = 0;
   private long useTimer, reloadTimer;
   private Weapon[] weapons = new Weapon[4];
   private boolean hasSwung = false, reloading = false;
+  private final int[] bullets;
 
-  int[] totalBullets = new int[5];
+  public Player(final Handler handler, final SavePlayer savePlayer) {
+    super(handler, savePlayer.x, savePlayer.y, DEFAULT_WIDTH, DEFAULT_HEIGHT, savePlayer.maxHealth);
 
-  public Player(final Handler handler, final float x, final float y, final Character character) {
-    super(handler, x, y, DEFAULT_WIDTH, DEFAULT_HEIGHT, 100);
+    health = savePlayer.health;
+    stamina = savePlayer.stamina;
 
-    this.character = character;
+    for (int i = 0; i < 4; i++) {
+      if (savePlayer.weapons[i] == null)
+        continue;
 
-    health = this.character.getStats().health;
-    speed = this.character.getStats().speed;
+      final Weapon weapon = savePlayer.weapons[i].toWeapon();
+      weapons[i] = weapon;
+    }
+    bullets = savePlayer.bullets;
 
-    stamina = new Stamina();
-    stamina.duration = character.getStats().stamina.duration;
-    stamina.regeneration = character.getStats().stamina.regeneration;
+    setWeapon(savePlayer.selectedWeaponIndex);
 
-    // TEMP
-    // Weapon.WEAPONS[4] = new MeleeWeapon(4, 0, "Sword", "Testing", Assets.spritesheets.get("weapons").crop(0, 32, 64, 32), 10, 200, 1000, 45);
 
-    weapons[0] = Weapon.WEAPONS[0];
-    weapons[1] = null;
-    weapons[2] = Weapon.WEAPONS[2];
-    weapons[3] = Weapon.WEAPONS[1];
+    System.out.println("xd");
+    this.character = Character.CHARACTERS[savePlayer.characterId];
 
     handler.getWorld().setPlayer(this);
 
+    // TODO: Add inventory functionality
     inventory = new Inventory(handler, handler.getWidth() - Inventory.WIDTH - 20, handler.getHeight() - Inventory.HEIGHT - 20, Inventory.WIDTH, Inventory.HEIGHT);
     inventory.setVisible(false);
-
-    setWeapon(0);
-
-    // TEMP
-    handler.getWorld().getEntityManager().addEntity(new Enemy(handler, 300, 300, 32, 32, 400));
-    handler.getWorld().getEntityManager().addEntity(new Enemy(handler, 400, 300, 32, 32, 400));
-    handler.getWorld().getEntityManager().addEntity(new Enemy(handler, 300, 400, 32, 32, 400));
-    handler.getWorld().getEntityManager().addEntity(new Enemy(handler, 400, 400, 32, 32, 400));
   }
 
   public void getInput(final double dt) {
@@ -100,7 +100,7 @@ public class Player extends Creature {
     if (handler.getKeyManager().keyJustPressed(VK_E))
       inventory.setVisible(!inventory.isVisible());
 
-    if (handler.getMouseManager().isLeftPressed()) {
+    if (handler.getMouseManager().isLeftPressed() && !inventory.isHovering()) {
       final int mx = handler.getMouseManager().getMouseX(), my = handler.getMouseManager().getMouseY();
 
       attack(mx, my);
@@ -108,7 +108,6 @@ public class Player extends Creature {
       if (hasSwung)
         hasSwung = false;
     }
-
 
     if (handler.getKeyManager().keyJustPressed(VK_SPACE) && character.getStats().playClass == Stats.NINJA && !running) {
       if (!dashing && System.currentTimeMillis() - lastDash >= dashingCooldown) {
@@ -148,7 +147,7 @@ public class Player extends Creature {
       }
     }
 
-    if (handler.getMouseManager().isRightPressed()) {
+    if (handler.getMouseManager().isRightPressed() && !inventory.isHovering()) {
       if (wiCanOpen) {
         wiCanOpen = false;
 
@@ -185,12 +184,26 @@ public class Player extends Creature {
       }
     }
 
+    if (handler.getKeyManager().keyJustPressed(VK_G)) {
+      final SaveObject obj = getSaveData();
+      final Gson gson = new Gson();
+
+      try {
+        PrintWriter writer = new PrintWriter(new File(System.getProperty("user.home") + "\\data.json"));
+        writer.write(gson.toJson(obj));
+        writer.flush();
+        writer.close();
+        System.exit(1);
+      } catch (FileNotFoundException e) {
+        e.printStackTrace();
+      }
+    }
+
     if (handler.getKeyManager().keyJustPressed(VK_ENTER))
       hurt(3);
 
     if (handler.getKeyManager().keyJustPressed(VK_R)) {
-      reloading = true;
-      reloadTimer = System.currentTimeMillis();
+      reload();
     }
 
     if (yMove < 0) {
@@ -238,7 +251,18 @@ public class Player extends Creature {
         return;
 
       if (System.currentTimeMillis() - reloadTimer > ((RangedWeapon) weapon).getReloadTime()) {
-        bullets = ((RangedWeapon) weapon).getClipSize();
+        final int clipSize = ((RangedWeapon) weapon).getClipSize();
+        final int typeId = weapon.getType();
+        final int neededBullets = clipSize - ((RangedWeapon) weapon).bullets;
+
+        if (bullets[typeId] >= neededBullets) {
+          ((RangedWeapon) weapon).bullets += neededBullets;
+          bullets[weapon.getType()] -= neededBullets;
+        } else {
+          ((RangedWeapon) weapon).bullets = bullets[typeId];
+          bullets[typeId] = 0;
+        }
+
         reloading = false;
       }
     }
@@ -274,7 +298,7 @@ public class Player extends Creature {
     Text.drawString(g, "Stamina duration: " + stamina.duration, 15, 190, false, Color.WHITE, Assets.andy16);
 
     Text.drawString(g, "Reloading: " + reloading, 15, 210, false, Color.WHITE, Assets.andy16);
-    Text.drawString(g, "Reload timer: " + ((weapon instanceof RangedWeapon) ? ((RangedWeapon) weapon).getReloadTime() - Math.min(System.currentTimeMillis() - reloadTimer, ((RangedWeapon) weapon).getReloadTime()) : ((MeleeWeapon) weapon).getUseTime() - Math.min(System.currentTimeMillis() - useTimer, ((MeleeWeapon) weapon).getUseTime())), 15, 230, false, Color.WHITE, Assets.andy16);
+    Text.drawString(g, "Reload timer: " + ((weapon instanceof RangedWeapon) ? ((RangedWeapon) weapon).getReloadTime() - Math.min(System.currentTimeMillis() - reloadTimer, ((RangedWeapon) weapon).getReloadTime()) : weapon.getUseTime() - Math.min(System.currentTimeMillis() - useTimer, weapon.getUseTime())), 15, 230, false, Color.WHITE, Assets.andy16);
 
 
     // Health
@@ -321,9 +345,9 @@ public class Player extends Creature {
     // Add graphical reload timer
     if (weapon instanceof RangedWeapon) {
       g.drawImage(weapon.getTextures()[0], 20, handler.getHeight() - 158, weapon.getTextures()[0].getWidth() * 2, 64, null);
-      Text.drawString(g, bullets + "/" + ((RangedWeapon) weapon).getClipSize(), 20, handler.getHeight() - 178, false, (reloading) ? Color.RED : Color.WHITE, Assets.andy32);
+      Text.drawString(g, ((RangedWeapon) weapon).bullets + "/" + bullets[weapon.getType()], 20, handler.getHeight() - 178, false, (reloading) ? Color.RED : Color.WHITE, Assets.andy32);
     } else {
-      g.drawImage(weapon.getTextures()[System.currentTimeMillis() - useTimer > ((MeleeWeapon) weapon).getUseTime() ? 0 : 1], 20, handler.getHeight() - 158, weapon.getTextures()[0].getWidth() * 2, 64, null);
+      g.drawImage(weapon.getTextures()[System.currentTimeMillis() - useTimer > weapon.getUseTime() ? 0 : 1], 20, handler.getHeight() - 158, weapon.getTextures()[0].getWidth() * 2, 64, null);
     }
   }
 
@@ -336,13 +360,13 @@ public class Player extends Creature {
 
   private void attack(final int mx, final int my) {
     if (weapon instanceof RangedWeapon) {
-      if (System.currentTimeMillis() - useTimer > ((RangedWeapon) weapon).getUseTime()) {
+      if (System.currentTimeMillis() - useTimer > weapon.getUseTime()) {
         useTimer = System.currentTimeMillis();
 
         shoot(mx, my);
       }
     } else if (weapon instanceof MeleeWeapon) {
-      if (System.currentTimeMillis() - useTimer > ((MeleeWeapon) weapon).getUseTime() && (((MeleeWeapon) weapon).isAutoSwing() || !hasSwung)) {
+      if (System.currentTimeMillis() - useTimer > weapon.getUseTime() && (((MeleeWeapon) weapon).isAutoSwing() || !hasSwung)) {
         hasSwung = true;
 
         useTimer = System.currentTimeMillis();
@@ -353,28 +377,33 @@ public class Player extends Creature {
   }
 
   private void shoot(final int mx, final int my) {
-    if (reloading)
-      return;
+    if (!reloading) {
+      if (((RangedWeapon) weapon).bullets <= 0) {
+        reload();
+      } else {
+        ((RangedWeapon) weapon).bullets--;
 
-    // TODO: Use clip size and reloading mechanics
-    final int xx = (int) (x + width / 2 - handler.getCamera().getxOff());
-    final int yy = (int) (y + height / 2 - handler.getCamera().getyOff());
-    final double angle = Math.atan2(my - yy, mx - xx);
+        // TODO: Use clip size and reloading mechanics
+        final int xx = (int) (x + width / 2 - handler.getCamera().getxOff());
+        final int yy = (int) (y + height / 2 - handler.getCamera().getyOff());
+        final double angle = Math.atan2(my - yy, mx - xx);
 
-    final int size = ((RangedWeapon) weapon).getBulletSize();
-    final float bx = x + width / 2 - size;
-    final float by = y + height / 2 - size;
+        final int size = ((RangedWeapon) weapon).getBulletSize();
+        final double bx = x + width / 2 - size;
+        final double by = y + height / 2 - size;
 
-    handler.getWorld().getBulletManager().addBullet(new Bullet(handler, angle, bx, by, (RangedWeapon) weapon));
+        handler.getWorld().getBulletManager().addBullet(new Bullet(handler, angle, bx, by, (RangedWeapon) weapon));
 
-    bullets--;
+        // Audio.playSound(Assets.gunshot, -17.5f);
+      }
+    }
+  }
 
-    if (bullets <= 0) {
+  private void reload() {
+    if (weapon instanceof RangedWeapon && ((RangedWeapon) weapon).bullets < ((RangedWeapon) weapon).getClipSize() && bullets[weapon.getType()] > 0) {
       reloading = true;
       reloadTimer = System.currentTimeMillis();
     }
-
-    Audio.playSound(Assets.gunshot, -17.5f);
   }
 
   private void slice(final int mx, final int my) {
@@ -443,10 +472,11 @@ public class Player extends Creature {
       return;
 
     weapon = weapons[id];
+    selectedWeaponIndex = id;
 
     if (weapon instanceof RangedWeapon) {
       // TODO: Later remember current bullets and total ammo
-      bullets = ((RangedWeapon) weapon).getClipSize();
+      // ((RangedWeapon) weapon).bullets = ((RangedWeapon) weapon).getClipSize();
     }
 
     System.out.println("Selected weapon with id " + id + ", name: " + this.weapon.getName());
@@ -457,5 +487,29 @@ public class Player extends Creature {
   private void disableWeaponInventory() {
     handler.getGame().getMenuManager().getMenu().getUiManager().removeObject(weaponInventory);
     weaponInventory = null;
+  }
+
+  public SaveObject getSaveData() {
+    final SaveObject object = new SaveObject();
+    object.player = new SavePlayer();
+
+    object.player.health = health;
+    object.player.maxHealth = maxHealth;
+
+    object.player.x = x;
+    object.player.y = y;
+
+    object.player.stamina = stamina;
+
+    object.player.weapons = new SaveWeapon[4];
+    for (int i = 0; i < 4; i++) {
+      if (weapons[i] != null)
+        object.player.weapons[i] = weapons[i].getSaveData();
+    }
+    object.player.selectedWeaponIndex = selectedWeaponIndex;
+
+    object.player.bullets = bullets;
+
+    return object;
   }
 }

@@ -1,4 +1,4 @@
-package me.kerdo.shootr.weapons;
+package me.kerdo.shootr.weapon;
 
 import me.kerdo.shootr.Handler;
 

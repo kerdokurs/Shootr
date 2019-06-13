@@ -10,7 +10,7 @@ import me.kerdo.shootr.input.MouseManager;
 import me.kerdo.shootr.item.Item;
 import me.kerdo.shootr.menu.MainMenu;
 import me.kerdo.shootr.menu.MenuManager;
-import me.kerdo.shootr.weapons.Weapon;
+import me.kerdo.shootr.weapon.Weapon;
 import me.kerdo.shootr.world.Tile;
 
 import java.awt.*;
@@ -74,6 +74,7 @@ public class Game implements Runnable {
   private void init() {
     display = new Display(title, width, height);
     display.setListeners(keyManager, mouseManager);
+
     Assets.init();
     Tile.init();
     Item.init(handler);

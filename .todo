@@ -26,13 +26,15 @@ Shootr:
   Character:
     ☐ Armor
     ☐ Customisation
-    ☐ Controls
+    ☐ Controls @today
     ☐ Perks
     ☐ Skills
     ☐ Upgrades (health, stamina, etc.)
+    ☐ Weapon upgrades @today
+
     UI:
       ✔ Health @done(19-06-13 00:38)
-      ☐ Stamina
+      ✔ Stamina @done(19-06-13 20:50)
       ☐ Ammo
   Menus:
     Main Menu:
@@ -57,7 +59,5 @@ Shootr:
     ☐ Modding folder
     ☐ Loading custom assets and data
     ☐ Dynamically load spritesheets
-  Bugs:
-    ☐ Health lost for no reason
   Story:
     ☐ Time travel

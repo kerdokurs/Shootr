@@ -30,7 +30,8 @@ public class Utils {
 
   public static String loadFileFromDisk(String path) {
     try {
-      final File file = new File(DIR + path);
+      //TODO: REMOVE COMMENTS
+      final File file = new File(/* DIR + */ path);
 
       final FileInputStream fis = new FileInputStream(file);
       final StringBuilder sb = new StringBuilder();

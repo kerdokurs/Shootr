@@ -8,13 +8,13 @@ public abstract class Entity {
   public static final int DEFAULT_HEALTH = 100;
 
   protected final Handler handler;
-  protected float x, y;
+  protected double x, y;
   protected final int width, height;
   protected int maxHealth, health;
   protected boolean active = true;
   protected Rectangle bounds;
 
-  public Entity(final Handler handler, final float x, final float y, final int width, final int height, final int maxHealth) {
+  public Entity(final Handler handler, final double x, final double y, final int width, final int height, final int maxHealth) {
     this.handler = handler;
     this.x = x;
     this.y = y;
@@ -61,19 +61,19 @@ public abstract class Entity {
     return new Rectangle((int) (x + bounds.x + xOff), (int) (y + bounds.y + yOff), bounds.width, bounds.height);
   }
 
-  public float getX() {
+  public double getX() {
     return x;
   }
 
-  public void setX(final float x) {
+  public void setX(final double x) {
     this.x = x;
   }
 
-  public float getY() {
+  public double getY() {
     return y;
   }
 
-  public void setY(final float y) {
+  public void setY(final double y) {
     this.y = y;
   }
 

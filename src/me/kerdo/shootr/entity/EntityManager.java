@@ -1,6 +1,8 @@
 package me.kerdo.shootr.entity;
 
+import javafx.print.PageLayout;
 import me.kerdo.shootr.Handler;
+import me.kerdo.shootr.entity.creature.Player;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -29,7 +31,7 @@ public class EntityManager {
       while (it.hasNext()) {
         Entity e = it.next();
         
-        if (isOutOfBounds(e)) continue;
+        if (!(e instanceof Player) && isOutOfBounds(e)) continue;
 
         e.tick(dt);
 
@@ -49,7 +51,7 @@ public class EntityManager {
       while (it.hasNext()) {
         Entity e = it.next();
 
-        if (isOutOfBounds(e))
+        if (!(e instanceof Player) && isOutOfBounds(e))
           continue;
 
         e.render(g);

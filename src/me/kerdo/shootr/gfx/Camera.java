@@ -6,9 +6,9 @@ import me.kerdo.shootr.world.Tile;
 
 public class Camera {
   private Handler handler;
-  private float xOff, yOff;
+  private double xOff, yOff;
 
-  public Camera(final Handler handler, final float xOff, final float yOff) {
+  public Camera(final Handler handler, final double xOff, final double yOff) {
     this.handler = handler;
     this.xOff = xOff;
     this.yOff = yOff;
@@ -37,26 +37,26 @@ public class Camera {
 		checkBlank();
 	}
 
-  public void move(float xAmt, float yAmt) {
+  public void move(final double xAmt, final double yAmt) {
     xOff += xAmt;
     yOff += yAmt;
     checkBlank();
   }
 
-  public float getxOff() {
+  public double getxOff() {
     return xOff;
   }
 
-  public void setxOff(float xOff) {
+  public void setxOff(final double xOff) {
     this.xOff = xOff;
     checkBlank();
   }
 
-  public float getyOff() {
+  public double getyOff() {
     return yOff;
   }
 
-  public void setyOff(float yOff) {
+  public void setyOff(final double yOff) {
     this.yOff = yOff;
     checkBlank();
   }

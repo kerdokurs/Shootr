@@ -2,14 +2,12 @@ package me.kerdo.shootr.gfx.ui.inventory.weapons;
 
 import me.kerdo.shootr.Handler;
 import me.kerdo.shootr.entity.creature.Player;
-import me.kerdo.shootr.gfx.Assets;
 import me.kerdo.shootr.gfx.ui.UIObject;
-import me.kerdo.shootr.weapons.Weapon;
+import me.kerdo.shootr.weapon.Weapon;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
-import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +22,7 @@ public class WeaponInventory extends UIObject {
 
     // visible = false;
 
-    // Dynamically load weapons from inventory
+    // Dynamically load weapon from inventory
     // Later add appear to mouse position
 
     slots.add(new WeaponInventorySlot(handler, x + width / 2 - WeaponInventorySlot.WIDTH / 2, y + WeaponInventorySlot.PADDING, WeaponInventorySlot.WIDTH, WeaponInventorySlot.HEIGHT, weapons[0]));

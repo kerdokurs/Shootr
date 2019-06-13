@@ -3,7 +3,7 @@ package me.kerdo.shootr.gfx.ui.inventory.weapons;
 import me.kerdo.shootr.Handler;
 import me.kerdo.shootr.gfx.Assets;
 import me.kerdo.shootr.gfx.ui.UIObject;
-import me.kerdo.shootr.weapons.Weapon;
+import me.kerdo.shootr.weapon.Weapon;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;

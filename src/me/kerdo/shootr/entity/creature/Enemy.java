@@ -7,13 +7,26 @@ import me.kerdo.shootr.gfx.Text;
 
 import java.awt.*;
 
-public class Enemy extends Entity {
+public class Enemy extends Creature {
   public Enemy(final Handler handler, final float x, final float y, final int width, final int height, final int maxHealth) {
     super(handler, x, y, width, height, maxHealth);
   }
 
   @Override
   public void tick(final double dt) {
+    move(dt);
+
+    final Player player = handler.getWorld().getPlayer();
+
+    double distance = Math.hypot(x - player.getX(), y - player.getY());
+
+    if (distance <= 600) {
+      xMove = (player.getX() - x) / (speed * dt);
+      yMove = (player.getY() - y) / (speed * dt);
+    } else {
+      xMove = 0;
+      yMove = 0;
+    }
   }
 
   @Override

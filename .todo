@@ -57,6 +57,7 @@ Shootr:
     ☐ Modding folder
     ☐ Loading custom assets and data
     ☐ Dynamically load spritesheets
-
-Bugs:
-  ☐ Health lost for no reason
+  Bugs:
+    ☐ Health lost for no reason
+  Story:
+    ☐ Time travel

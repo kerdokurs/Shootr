@@ -1,5 +1,8 @@
 package me.kerdo.shootr.gfx;
 
+import me.kerdo.shootr.audio.Audio;
+
+import javax.sound.sampled.Clip;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.HashMap;
@@ -18,12 +21,16 @@ public class Assets {
   public static BufferedImage inventoryBackground,
           inventorySlotBackground, itemDescriptionBackground;
 
+  public static BufferedImage weaponSlotBackground;
+
   public static BufferedImage characterSelectionBackground;
 
   public static BufferedImage[] buttonBackground = new BufferedImage[2];
   public static BufferedImage[] arrowRight, arrowLeft;
 
   public static BufferedImage heart, stamina;
+
+  public static Clip gunshot;
 
   public static void init() {
     // Font loading
@@ -43,6 +50,8 @@ public class Assets {
     inventoryBackground = ImageLoader.loadImage("/textures/inventory/inventory_background.png");
     inventorySlotBackground = ImageLoader.loadImage("/textures/inventory/inventory_slot.png");
     itemDescriptionBackground = ImageLoader.loadImage("/textures/inventory/item_description_background.png");
+
+    weaponSlotBackground = ImageLoader.loadImage("/textures/inventory/weapon_slot_background.png");
 
     buttonBackground[0] = ImageLoader.loadImage("/textures/menu/button_background.png");
     buttonBackground[1] = ImageLoader.loadImage("/textures/menu/button_background_hover.png");
@@ -71,6 +80,8 @@ public class Assets {
       for (int i = 0; i < amt; i++)
         arrowLeft[i] = arrowLeftSpritesheet.crop16(i, 0);
     }
+
+    gunshot = Audio.loadSound("gunshot.wav");
   }
 
   public static BufferedImage get(final String name) {

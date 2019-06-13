@@ -2,31 +2,85 @@ package me.kerdo.shootr.gfx.ui.inventory.weapons;
 
 import me.kerdo.shootr.Handler;
 import me.kerdo.shootr.gfx.Assets;
-import me.kerdo.shootr.gfx.ui.UIClickable;
-import me.kerdo.shootr.gfx.ui.UIImage;
-import me.kerdo.shootr.item.Item;
+import me.kerdo.shootr.gfx.ui.UIObject;
+import me.kerdo.shootr.weapons.Weapon;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseWheelEvent;
 
-public class WeaponInventorySlot extends UIImage {
-  public WeaponInventorySlot(final Handler handler, final int x, final int y, final int width, final int height, final BufferedImage texture) {
-    super(handler, x, y, width, height, texture, false);
+public class WeaponInventorySlot extends UIObject {
+  public static final int WIDTH = 128, HEIGHT = 64, PADDING = 10;
+
+  private final Weapon weapon;
+
+  public WeaponInventorySlot(final Handler handler, final int x, final int y, final int width, final int height, final Weapon weapon) {
+    super(handler, x, y, width, height);
+    this.weapon = weapon;
   }
 
   @Override
-  public void render(Graphics g) {
+  public void tick(final double dt) {
+
+  }
+
+  @Override
+  public void render(final Graphics g) {
+    g.drawImage(Assets.weaponSlotBackground, this.x, this.y, 128, 64, null);
+
+    if (weapon == null)
+      return;
+
     int x = this.x, y = this.y;
     int width = this.width, height = this.height;
 
-    if (hovering) {
-      x -= 6;
-      y -= 6;
-      width += 6;
-      height += 6;
+    int tWidth = weapon.getTextures()[0].getWidth();
+
+    if (tWidth == 32) {
+      x += 32;
+      width /= 2;
     }
 
-    g.drawImage(Assets.inventorySlotBackground, this.x - 6, this.y - 6, 140, 72, null);
-    g.drawImage(texture, x, y, width, height, null);
+    if (hovering) {
+      x -= (tWidth == 32) ? 3 : 6;
+      y -= (tWidth == 32) ? 3 : 6;
+
+      width += (tWidth == 32) ? 6 : 12;
+      height += (tWidth == 32) ? 6 : 12;
+    }
+
+    g.drawImage(weapon.getTextures()[hovering ? 1 : 0], x, y, width, height, null);
+  }
+
+  @Override
+  public void mousePressed(final MouseEvent e) {
+  }
+
+  @Override
+  public void mouseReleased(final MouseEvent e) {
+  }
+
+  @Override
+  public void mouseMoved(final MouseEvent e) {
+  }
+
+  @Override
+  public void mouseWheelMoved(final MouseWheelEvent e) {
+  }
+
+  @Override
+  public void mouseDragged(final MouseEvent e) {
+  }
+
+  @Override
+  public void mouseClicked(final MouseEvent e) {
+  }
+
+  @Override
+  public void mouseEntered(final MouseEvent e) {
+  }
+
+  @Override
+  public void mouseExited(final MouseEvent e) {
   }
 }

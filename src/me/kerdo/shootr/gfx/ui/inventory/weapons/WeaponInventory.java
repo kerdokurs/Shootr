@@ -16,8 +16,6 @@ import java.util.List;
 public class WeaponInventory extends UIObject {
   private final Player player;
 
-  int p = 64;
-
   private final List<UIObject> slots = new ArrayList<>();
 
   public WeaponInventory(final Handler handler, final int x, final int y, final int width, final int height, final Player player, final Weapon[] weapons) {
@@ -29,10 +27,10 @@ public class WeaponInventory extends UIObject {
     // Dynamically load weapons from inventory
     // Later add appear to mouse position
 
-    slots.add(new WeaponInventorySlot(handler, x + 74, y + 10, 128, 64, weapons[0].getTexture()));
-    slots.add(new WeaponInventorySlot(handler, x + width / 2 + p, y + 106, 128, 64, weapons[1].getTexture()));
-    slots.add(new WeaponInventorySlot(handler, x + 67, y + height / 2 + p, 128, 64, weapons[2].getTexture()));
-    slots.add(new WeaponInventorySlot(handler, x - p + 10, y + 106, 128, 64, weapons[3].getTexture()));
+    slots.add(new WeaponInventorySlot(handler, x + width / 2 - WeaponInventorySlot.WIDTH / 2, y + WeaponInventorySlot.PADDING, WeaponInventorySlot.WIDTH, WeaponInventorySlot.HEIGHT, weapons[0]));
+    slots.add(new WeaponInventorySlot(handler, x + width - (WeaponInventorySlot.WIDTH + WeaponInventorySlot.PADDING), y + height / 2 - WeaponInventorySlot.HEIGHT / 2, WeaponInventorySlot.WIDTH, WeaponInventorySlot.HEIGHT, weapons[1]));
+    slots.add(new WeaponInventorySlot(handler, x + width / 2 - WeaponInventorySlot.WIDTH / 2, y + height - (WeaponInventorySlot.HEIGHT + WeaponInventorySlot.PADDING), WeaponInventorySlot.WIDTH, WeaponInventorySlot.HEIGHT, weapons[2]));
+    slots.add(new WeaponInventorySlot(handler, x + WeaponInventorySlot.PADDING, y + height / 2 - WeaponInventorySlot.HEIGHT / 2, WeaponInventorySlot.WIDTH, WeaponInventorySlot.HEIGHT, weapons[3]));
   }
 
   @Override
@@ -45,6 +43,8 @@ public class WeaponInventory extends UIObject {
 
   @Override
   public void render(final Graphics g) {
+    g.setColor(Color.WHITE);
+    g.drawRect(x, y, width, height);
     for (final UIObject object : slots) {
       object.render(g);
     }

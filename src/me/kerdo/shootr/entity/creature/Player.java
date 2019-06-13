@@ -1,6 +1,7 @@
 package me.kerdo.shootr.entity.creature;
 
 import me.kerdo.shootr.Handler;
+import me.kerdo.shootr.audio.Audio;
 import me.kerdo.shootr.entity.Entity;
 import me.kerdo.shootr.entity.character.Character;
 import me.kerdo.shootr.entity.character.Stamina;
@@ -42,9 +43,12 @@ public class Player extends Creature {
   private boolean wiCanOpen = true;
 
   private Weapon weapon;
+  private int bullets;
   private long useTimer, reloadTimer;
   private Weapon[] weapons = new Weapon[4];
-  private boolean hasSwung = false;
+  private boolean hasSwung = false, reloading = false;
+
+  int[] totalBullets = new int[5];
 
   public Player(final Handler handler, final float x, final float y, final Character character) {
     super(handler, x, y, DEFAULT_WIDTH, DEFAULT_HEIGHT, 100);
@@ -62,22 +66,22 @@ public class Player extends Creature {
     // Weapon.WEAPONS[4] = new MeleeWeapon(4, 0, "Sword", "Testing", Assets.spritesheets.get("weapons").crop(0, 32, 64, 32), 10, 200, 1000, 45);
 
     weapons[0] = Weapon.WEAPONS[0];
-    weapons[1] = Weapon.WEAPONS[4];
+    weapons[1] = null;
     weapons[2] = Weapon.WEAPONS[2];
-    weapons[3] = Weapon.WEAPONS[3];
+    weapons[3] = Weapon.WEAPONS[1];
 
     handler.getWorld().setPlayer(this);
 
     inventory = new Inventory(handler, handler.getWidth() - Inventory.WIDTH - 20, handler.getHeight() - Inventory.HEIGHT - 20, Inventory.WIDTH, Inventory.HEIGHT);
     inventory.setVisible(false);
 
-    weapon = weapons[0];
+    setWeapon(0);
 
     // TEMP
     handler.getWorld().getEntityManager().addEntity(new Enemy(handler, 300, 300, 32, 32, 400));
-    handler.getWorld().getEntityManager().addEntity(new Enemy(handler, 332, 332, 32, 32, 400));
-    handler.getWorld().getEntityManager().addEntity(new Enemy(handler, 332, 300, 32, 32, 400));
-    handler.getWorld().getEntityManager().addEntity(new Enemy(handler, 300, 332, 32, 32, 400));
+    handler.getWorld().getEntityManager().addEntity(new Enemy(handler, 400, 300, 32, 32, 400));
+    handler.getWorld().getEntityManager().addEntity(new Enemy(handler, 300, 400, 32, 32, 400));
+    handler.getWorld().getEntityManager().addEntity(new Enemy(handler, 400, 400, 32, 32, 400));
   }
 
   public void getInput(final double dt) {
@@ -149,7 +153,7 @@ public class Player extends Creature {
         wiCanOpen = false;
 
         if (weaponInventory == null) {
-          weaponInventory = new WeaponInventory(handler, handler.getMouseManager().getMouseX() - 138, handler.getMouseManager().getMouseY() - 138, 276, 276, this, weapons);
+          weaponInventory = new WeaponInventory(handler, handler.getMouseManager().getMouseX() - 212, handler.getMouseManager().getMouseY() - 138, 424, 276, this, weapons);
           weaponInventory.setVisible(true);
           handler.getGame().getMenuManager().getMenu().getUiManager().addObject(weaponInventory);
         }
@@ -183,6 +187,11 @@ public class Player extends Creature {
 
     if (handler.getKeyManager().keyJustPressed(VK_ENTER))
       hurt(3);
+
+    if (handler.getKeyManager().keyJustPressed(VK_R)) {
+      reloading = true;
+      reloadTimer = System.currentTimeMillis();
+    }
 
     if (yMove < 0) {
       lastDir = dir;
@@ -224,6 +233,16 @@ public class Player extends Creature {
       }
     }
 
+    if (reloading) {
+      if (!(weapon instanceof RangedWeapon))
+        return;
+
+      if (System.currentTimeMillis() - reloadTimer > ((RangedWeapon) weapon).getReloadTime()) {
+        bullets = ((RangedWeapon) weapon).getClipSize();
+        reloading = false;
+      }
+    }
+
     character.getAnimations()[state][dir].tick(dt);
   }
 
@@ -253,6 +272,9 @@ public class Player extends Creature {
 
     Text.drawString(g, "Can run: " + canRun, 15, 170, false, Color.WHITE, Assets.andy16);
     Text.drawString(g, "Stamina duration: " + stamina.duration, 15, 190, false, Color.WHITE, Assets.andy16);
+
+    Text.drawString(g, "Reloading: " + reloading, 15, 210, false, Color.WHITE, Assets.andy16);
+    Text.drawString(g, "Reload timer: " + ((weapon instanceof RangedWeapon) ? ((RangedWeapon) weapon).getReloadTime() - Math.min(System.currentTimeMillis() - reloadTimer, ((RangedWeapon) weapon).getReloadTime()) : ((MeleeWeapon) weapon).getUseTime() - Math.min(System.currentTimeMillis() - useTimer, ((MeleeWeapon) weapon).getUseTime())), 15, 230, false, Color.WHITE, Assets.andy16);
 
 
     // Health
@@ -292,6 +314,17 @@ public class Player extends Creature {
       Polygon p = new Polygon(new int[] { xx, nx1, nx, nx2 }, new int[] { yy, ny1, ny, ny2 }, 4);
       g.drawPolygon(p);
     }
+
+    // Current weapon HUD
+    // Image, ammo
+
+    // Add graphical reload timer
+    if (weapon instanceof RangedWeapon) {
+      g.drawImage(weapon.getTextures()[0], 20, handler.getHeight() - 158, weapon.getTextures()[0].getWidth() * 2, 64, null);
+      Text.drawString(g, bullets + "/" + ((RangedWeapon) weapon).getClipSize(), 20, handler.getHeight() - 178, false, (reloading) ? Color.RED : Color.WHITE, Assets.andy32);
+    } else {
+      g.drawImage(weapon.getTextures()[System.currentTimeMillis() - useTimer > ((MeleeWeapon) weapon).getUseTime() ? 0 : 1], 20, handler.getHeight() - 158, weapon.getTextures()[0].getWidth() * 2, 64, null);
+    }
   }
 
   public void postRender(final Graphics g) {
@@ -320,6 +353,9 @@ public class Player extends Creature {
   }
 
   private void shoot(final int mx, final int my) {
+    if (reloading)
+      return;
+
     // TODO: Use clip size and reloading mechanics
     final int xx = (int) (x + width / 2 - handler.getCamera().getxOff());
     final int yy = (int) (y + height / 2 - handler.getCamera().getyOff());
@@ -330,6 +366,15 @@ public class Player extends Creature {
     final float by = y + height / 2 - size;
 
     handler.getWorld().getBulletManager().addBullet(new Bullet(handler, angle, bx, by, (RangedWeapon) weapon));
+
+    bullets--;
+
+    if (bullets <= 0) {
+      reloading = true;
+      reloadTimer = System.currentTimeMillis();
+    }
+
+    Audio.playSound(Assets.gunshot, -17.5f);
   }
 
   private void slice(final int mx, final int my) {
@@ -394,10 +439,15 @@ public class Player extends Creature {
   }
 
   public void setWeapon(final int id) {
-    if (weapon == weapons[id])
+    if (weapons[id] == null || weapon == weapons[id])
       return;
 
     weapon = weapons[id];
+
+    if (weapon instanceof RangedWeapon) {
+      // TODO: Later remember current bullets and total ammo
+      bullets = ((RangedWeapon) weapon).getClipSize();
+    }
 
     System.out.println("Selected weapon with id " + id + ", name: " + this.weapon.getName());
 

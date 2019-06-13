@@ -5,12 +5,12 @@ import me.kerdo.shootr.entity.Entity;
 import me.kerdo.shootr.world.Tile;
 
 public abstract class Creature extends Entity {
-  public static final float DEFAULT_SPEED = 500f;
+  public static final double DEFAULT_SPEED = 200;
   public static final int DEFAULT_WIDTH = 64,
           DEFAULT_HEIGHT = 64;
 
-  protected float speed;
-  protected float xMove, yMove;
+  protected double speed;
+  protected double xMove, yMove;
 
   public Creature(final Handler handler, final float x, final float y, final int width, final int height, final int maxHealth) {
     super(handler, x, y, width, height, maxHealth);
@@ -20,9 +20,9 @@ public abstract class Creature extends Entity {
   }
 
   public void move(final double dt) {
-    if (!checkEntityCollisions(xMove*dt, 0))
+    if (!checkEntityCollisions(xMove * dt, 0))
       moveX(dt);
-    if (!checkEntityCollisions(0, yMove*dt))
+    if (!checkEntityCollisions(0, yMove * dt))
       moveY(dt);
   }
 
@@ -91,19 +91,19 @@ public abstract class Creature extends Entity {
     return handler.getWorld().getTile(x, y).isSolid();
   }
 
-  public float getxMov() {
+  public double getxMov() {
     return xMove;
   }
 
-  public void setxMov(final float xMov) {
+  public void setxMov(final double xMov) {
     this.xMove = xMov;
   }
 
-  public float getyMov() {
+  public double getyMov() {
     return yMove;
   }
 
-  public void setyMov(final float yMov) {
+  public void setyMov(final double yMov) {
     this.yMove = yMov;
   }
 }

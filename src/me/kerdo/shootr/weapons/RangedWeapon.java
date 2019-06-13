@@ -10,8 +10,8 @@ public class RangedWeapon extends Weapon {
   private final double inaccuracy;
   private final int useTime;
 
-  public RangedWeapon(final int id, final int type, final String name, final String description, final BufferedImage texture, final double damage, final int range, final int bulletSpeed, final int bulletSize, final int clipSize, final int reloadTime, final double inaccuracy, final int useTime) {
-    super(id, type, name, description, texture, damage, range);
+  public RangedWeapon(final int id, final int type, final String name, final String description, final BufferedImage[] textures, final double damage, final int range, final int bulletSpeed, final int bulletSize, final int clipSize, final int reloadTime, final double inaccuracy, final int useTime) {
+    super(id, type, name, description, textures, damage, range);
 
     this.bulletSpeed = bulletSpeed;
     this.bulletSize = bulletSize;

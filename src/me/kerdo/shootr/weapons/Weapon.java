@@ -19,16 +19,16 @@ public class Weapon {
   private final int type;
   private final String name;
   private final String description;
-  private final BufferedImage texture;
+  private final BufferedImage[] textures;
   private final double damage;
   private final int range;
 
-  public Weapon(final int id, final int type, final String name, final String description, final BufferedImage texture, final double damage, final int range) {
+  public Weapon(final int id, final int type, final String name, final String description, final BufferedImage[] textures, final double damage, final int range) {
     this.id = id;
     this.type = type;
     this.name = name;
     this.description = description;
-    this.texture = texture;
+    this.textures = textures;
     this.damage = damage;
     this.range = range;
 
@@ -53,11 +53,17 @@ public class Weapon {
       final JsonObject texture = weapon.get("texture").getAsJsonObject();
       final String textureName = texture.get("name").getAsString();
       final JsonArray textureCoords = texture.get("coords").getAsJsonArray();
-      final int textureX = textureCoords.get(0).getAsInt(), textureY = textureCoords.get(1).getAsInt();
+
+      final JsonArray textureCoordsNH = textureCoords.get(0).getAsJsonArray(), textureCoordsH = textureCoords.get(1).getAsJsonArray();
+
+      final int textureX = textureCoordsNH.get(0).getAsInt(), textureY = textureCoordsNH.get(1).getAsInt();
+      final int textureXH = textureCoordsH.get(0).getAsInt(), textureYH = textureCoordsH.get(1).getAsInt();
+
       final JsonArray textureSize = texture.get("size").getAsJsonArray();
       final int sizeX = textureSize.get(0).getAsInt(), sizeY = textureSize.get(1).getAsInt();
 
-      final BufferedImage textureImage = Assets.spritesheets.get(textureName).crop(textureX * sizeX, textureY * sizeY, sizeX, sizeY);
+      final BufferedImage textureImage = Assets.spritesheets.get(textureName).crop(textureX * 32, textureY * 32, sizeX, sizeY);
+      final BufferedImage textureImageH = Assets.spritesheets.get(textureName).crop(textureXH * 32, textureYH * 32, sizeX, sizeY);
 
       final double damage = weapon.get("damage").getAsDouble();
       final int range = weapon.get("range").getAsInt();
@@ -70,12 +76,12 @@ public class Weapon {
         final int reloadTime = weapon.get("reloadTime").getAsInt();
         final double inaccuracy = weapon.get("inaccuracy").getAsInt();
 
-        new RangedWeapon(id, type, name, description, textureImage, damage, range, bulletSpeed, bulletSize, clipSize, reloadTime, inaccuracy, useTime);
+        new RangedWeapon(id, type, name, description, new BufferedImage[] { textureImage, textureImageH }, damage, range, bulletSpeed, bulletSize, clipSize, reloadTime, inaccuracy, useTime);
       } else if (type == SWORD) {
         final int angle = weapon.get("angle").getAsInt();
         final boolean autoSwing = weapon.get("autoSwing").getAsBoolean();
 
-        new MeleeWeapon(id, type, name, description, textureImage, damage, range, useTime, angle, autoSwing);
+        new MeleeWeapon(id, type, name, description, new BufferedImage[] { textureImage, textureImageH }, damage, range, useTime, angle, autoSwing);
       }
     }
   }
@@ -96,8 +102,8 @@ public class Weapon {
     return description;
   }
 
-  public BufferedImage getTexture() {
-    return texture;
+  public BufferedImage[] getTextures() {
+    return textures;
   }
 
   public double getDamage() {

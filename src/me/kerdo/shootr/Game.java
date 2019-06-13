@@ -10,6 +10,7 @@ import me.kerdo.shootr.input.MouseManager;
 import me.kerdo.shootr.item.Item;
 import me.kerdo.shootr.menu.MainMenu;
 import me.kerdo.shootr.menu.MenuManager;
+import me.kerdo.shootr.weapons.Weapon;
 import me.kerdo.shootr.world.Tile;
 
 import java.awt.*;
@@ -77,6 +78,7 @@ public class Game implements Runnable {
     Tile.init();
     Item.init(handler);
     Character.init();
+    Weapon.init();
 
     cursor = toolkit.createCustomCursor(Assets.cursor, new Point(0, 0), "img");
     display.setCursor(cursor);
@@ -198,7 +200,7 @@ public class Game implements Runnable {
       }
 
       try {
-        Thread.sleep((long) (PERIOD - dt));
+        Thread.sleep((long) ((PERIOD - dt > 0) ? PERIOD - dt : PERIOD));
       } catch (InterruptedException e) {
         e.printStackTrace();
       }

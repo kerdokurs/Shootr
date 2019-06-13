@@ -17,7 +17,6 @@ public class GameMenu extends Menu {
 
     world.getEntityManager().addEntity(new Player(handler, 200, 200, Character.CHARACTERS[0]));
     uiManager.addObject(handler.getWorld().getPlayer().getInventory());
-    uiManager.addObject(handler.getWorld().getPlayer().getWeaponInventory());
   }
 
   @Override

@@ -1,0 +1,78 @@
+[
+  {
+    "id": 0,
+    "type": 0,
+    "name": "Genuine pistol",
+    "description": "Just a geniune pistol",
+    "texture": {
+      "name": "weapons",
+      "coords": [0, 0],
+      "size": [32, 32]
+    },
+    "damage": 20,
+    "range": 2000,
+    "bulletSpeed": 1000,
+    "bulletSize": 6,
+    "clipSize": 12,
+    "reloadTime": 600,
+    "inaccuracy": 0.5,
+    "shootTime": 200
+  },
+  {
+    "id": 1,
+    "type": 0,
+    "name": "Genuine pistol 2",
+    "description": "Just a geniune pistol 2",
+    "texture": {
+      "name": "weapons",
+      "coords": [1, 0],
+      "size": [32, 32]
+    },
+    "damage": 20,
+    "range": 2000,
+    "bulletSpeed": 2000,
+    "bulletSize": 10,
+    "clipSize": 12,
+    "reloadTime": 600,
+    "inaccuracy": 0.5,
+    "shootTime": 200
+  },
+  {
+    "id": 2,
+    "type": 0,
+    "name": "Genuine pistol 3",
+    "description": "Just a geniune pistol 3",
+    "texture": {
+      "name": "weapons",
+      "coords": [2, 0],
+      "size": [32, 32]
+    },
+    "damage": 20,
+    "range": 2000,
+    "bulletSpeed": 600,
+    "bulletSize": 16,
+    "clipSize": 12,
+    "reloadTime": 600,
+    "inaccuracy": 0.5,
+    "shootTime": 200
+  },
+  {
+    "id": 3,
+    "type": 0,
+    "name": "Genuine pistol 4",
+    "description": "Just a geniune pistol 4",
+    "texture": {
+      "name": "weapons",
+      "coords": [3, 0],
+      "size": [32, 32]
+    },
+    "damage": 20,
+    "range": 2000,
+    "bulletSpeed": 5000,
+    "bulletSize": 20,
+    "clipSize": 12,
+    "reloadTime": 600,
+    "inaccuracy": 0.5,
+    "shootTime": 200
+  }
+]

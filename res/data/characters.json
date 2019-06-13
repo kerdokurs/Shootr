@@ -1,0 +1,46 @@
+[
+  {
+    "id": 0,
+    "name": "Character 1",
+    "texture": {
+      "location": "char1",
+      "size": [34, 34],
+      "speed": 200,
+
+      "portrait": {
+        "speed": 400,
+        "size": [34, 34]
+      }
+    },
+    "stats": {
+      "playClass": 2,
+      "health": 100,
+      "speed": 300,
+      "stamina": {
+        "duration": 4000,
+        "regeneration": 32000
+      }
+    },
+    "perks": {}
+  },
+  {
+    "id": 1,
+    "name": "Character 2",
+    "texture": {
+      "location": "char2",
+      "size": [34, 34],
+      "speed": 200,
+
+      "portrait": {
+        "speed": 400,
+        "size": [34, 34]
+      }
+    },
+    "stats": {
+      "playClass": 1,
+      "health": 160,
+      "speed": 600
+    },
+    "perks": {}
+  }
+]

@@ -25,6 +25,7 @@ public abstract class Entity {
     if (maxHealth == 0)
       this.maxHealth = DEFAULT_HEALTH;
 
+    // TODO: HEALTH TO DOUBLE
     health = maxHealth;
 
     bounds = new Rectangle(0, 0, width, height);

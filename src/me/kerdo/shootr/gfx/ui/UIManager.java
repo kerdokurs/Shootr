@@ -29,8 +29,11 @@ public class UIManager {
 
     for (final UIObject object : objects) {
       if (object.isVisible()) {
-        if (object.getBounds().contains(new Point(x, y)))
+        if (object.getBounds().contains(new Point(x, y))) {
+          object.setHovering(true);
           object.mousePressed(e);
+        } else
+          object.setHovering(false);
       }
     }
   }
@@ -41,8 +44,11 @@ public class UIManager {
 
     for (final UIObject object : objects) {
       if (object.isVisible()) {
-        if (object.getBounds().contains(new Point(x, y)))
+        if (object.getBounds().contains(new Point(x, y))) {
+          object.setHovering(true);
           object.mouseReleased(e);
+        } else
+          object.setHovering(false);
       }
     }
   }
@@ -68,8 +74,11 @@ public class UIManager {
 
     for (final UIObject object : objects) {
       if (object.isVisible()) {
-        if (object.getBounds().contains(new Point(x, y)))
+        if (object.getBounds().contains(new Point(x, y))) {
+          object.setHovering(true);
           object.mouseWheelMoved(e);
+        } else
+          object.setHovering(false);
       }
     }
   }
@@ -80,8 +89,11 @@ public class UIManager {
 
     for (final UIObject object : objects) {
       if (object.isVisible()) {
-        if (object.getBounds().contains(new Point(x, y)))
+        if (object.getBounds().contains(new Point(x, y))) {
+          object.setHovering(true);
           object.mouseDragged(e);
+        } else
+          object.setHovering(false);
       }
     }
   }
@@ -92,8 +104,11 @@ public class UIManager {
 
     for (final UIObject object : objects) {
       if (object.isVisible()) {
-        if (object.getBounds().contains(new Point(x, y)))
+        if (object.getBounds().contains(new Point(x, y))) {
+          object.setHovering(true);
           object.mouseClicked(e);
+        } else
+          object.setHovering(false);
       }
     }
   }
@@ -104,8 +119,11 @@ public class UIManager {
 
     for (final UIObject object : objects) {
       if (object.isVisible()) {
-        if (object.getBounds().contains(new Point(x, y)))
-          object.mouseEntered(e);
+        if (object.getBounds().contains(new Point(x, y))) {
+          object.setHovering(true);
+          object.mousePressed(e);
+        } else
+          object.setHovering(false);
       }
     }
   }
@@ -116,8 +134,11 @@ public class UIManager {
 
     for (final UIObject object : objects) {
       if (object.isVisible()) {
-        if (object.getBounds().contains(new Point(x, y)))
+        if (object.getBounds().contains(new Point(x, y))) {
+          object.setHovering(true);
           object.mouseExited(e);
+        } else
+          object.setHovering(false);
       }
     }
   }

@@ -49,12 +49,9 @@ public class Utils {
     return null;
   }
 
-  public static double limitPrecision(final String dbl, final int maxDigitsAfterDecimal, final boolean announce) {
+  public static double limitPrecision(final double dbl, final int maxDigitsAfterDecimal) {
     final int multiplier = (int) Math.pow(10, maxDigitsAfterDecimal);
-    final double truncated = (double) ((long) ((Double.parseDouble(dbl)) * multiplier)) / multiplier;
-
-    if (announce)
-      System.out.println(dbl + " ==> " + truncated);
+    final double truncated = (double) ((long) (dbl * multiplier)) / multiplier;
 
     return truncated;
   }

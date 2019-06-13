@@ -23,6 +23,8 @@ public class Assets {
   public static BufferedImage[] buttonBackground = new BufferedImage[2];
   public static BufferedImage[] arrowRight, arrowLeft;
 
+  public static BufferedImage heart;
+
   public static void init() {
     // Font loading
     andy8 = FontLoader.loadFont("AndyBold.ttf", 8);
@@ -46,6 +48,8 @@ public class Assets {
     buttonBackground[1] = ImageLoader.loadImage("/textures/menu/button_background_hover.png");
 
     characterSelectionBackground = ImageLoader.loadImage("/textures/char_sel_background.png");
+
+    heart = ImageLoader.loadImage("/textures/heart.png");
 
     {
       Spritesheet arrowRightSpritesheet = new Spritesheet(ImageLoader.loadImage("/textures/arrow_right.png"));

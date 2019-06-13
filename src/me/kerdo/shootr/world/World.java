@@ -4,14 +4,17 @@ import me.kerdo.shootr.Handler;
 import me.kerdo.shootr.entity.EntityManager;
 import me.kerdo.shootr.entity.creature.Player;
 import me.kerdo.shootr.utils.Utils;
+import me.kerdo.shootr.weapons.BulletManager;
 
 import java.awt.*;
 
 public class World {
   private final Handler handler;
 
-  private EntityManager entityManager;
+  private final EntityManager entityManager;
   private Player player;
+
+  private final BulletManager bulletManager;
 
   private int width, height;
 
@@ -21,12 +24,14 @@ public class World {
     this.handler = handler;
 
     entityManager = new EntityManager(handler);
+    bulletManager = new BulletManager(handler);
 
     load("world1");
   }
 
   public void tick(final double dt) {
-  entityManager.tick(dt);
+    entityManager.tick(dt);
+    bulletManager.tick(dt);
   }
 
   public void render(final Graphics g) {
@@ -43,6 +48,7 @@ public class World {
     }
 
     entityManager.render(g);
+    bulletManager.render(g);
   }
 
   public Tile getTile(final int x, final int y) {
@@ -82,6 +88,10 @@ public class World {
 
   public EntityManager getEntityManager() {
     return entityManager;
+  }
+
+  public BulletManager getBulletManager() {
+    return bulletManager;
   }
 
   public Player getPlayer() {

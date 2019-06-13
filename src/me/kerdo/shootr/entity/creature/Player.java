@@ -1,6 +1,7 @@
 package me.kerdo.shootr.entity.creature;
 
 import me.kerdo.shootr.Handler;
+import me.kerdo.shootr.entity.Entity;
 import me.kerdo.shootr.entity.character.Character;
 import me.kerdo.shootr.entity.character.Stamina;
 import me.kerdo.shootr.entity.character.Stats;
@@ -43,6 +44,7 @@ public class Player extends Creature {
   private Weapon weapon;
   private long useTimer, reloadTimer;
   private Weapon[] weapons = new Weapon[4];
+  private boolean hasSwung = false;
 
   public Player(final Handler handler, final float x, final float y, final Character character) {
     super(handler, x, y, DEFAULT_WIDTH, DEFAULT_HEIGHT, 100);
@@ -56,8 +58,11 @@ public class Player extends Creature {
     stamina.duration = character.getStats().stamina.duration;
     stamina.regeneration = character.getStats().stamina.regeneration;
 
+    // TEMP
+    // Weapon.WEAPONS[4] = new MeleeWeapon(4, 0, "Sword", "Testing", Assets.spritesheets.get("weapons").crop(0, 32, 64, 32), 10, 200, 1000, 45);
+
     weapons[0] = Weapon.WEAPONS[0];
-    weapons[1] = Weapon.WEAPONS[1];
+    weapons[1] = Weapon.WEAPONS[4];
     weapons[2] = Weapon.WEAPONS[2];
     weapons[3] = Weapon.WEAPONS[3];
 
@@ -66,7 +71,13 @@ public class Player extends Creature {
     inventory = new Inventory(handler, handler.getWidth() - Inventory.WIDTH - 20, handler.getHeight() - Inventory.HEIGHT - 20, Inventory.WIDTH, Inventory.HEIGHT);
     inventory.setVisible(false);
 
-    weapon = Weapon.WEAPONS[0];
+    weapon = weapons[0];
+
+    // TEMP
+    handler.getWorld().getEntityManager().addEntity(new Enemy(handler, 300, 300, 32, 32, 400));
+    handler.getWorld().getEntityManager().addEntity(new Enemy(handler, 332, 332, 32, 32, 400));
+    handler.getWorld().getEntityManager().addEntity(new Enemy(handler, 332, 300, 32, 32, 400));
+    handler.getWorld().getEntityManager().addEntity(new Enemy(handler, 300, 332, 32, 32, 400));
   }
 
   public void getInput(final double dt) {
@@ -89,6 +100,9 @@ public class Player extends Creature {
       final int mx = handler.getMouseManager().getMouseX(), my = handler.getMouseManager().getMouseY();
 
       attack(mx, my);
+    } else {
+      if (hasSwung)
+        hasSwung = false;
     }
 
 
@@ -123,7 +137,6 @@ public class Player extends Creature {
         speed = character.getStats().speed;
       }
 
-      // TODO: SPRINT LEFT ON IF CANCELLED EARLY
     } else {
       if (running) {
         running = false;
@@ -247,8 +260,38 @@ public class Player extends Creature {
     Text.drawString(g, ((int) Utils.limitPrecision(((double) health / maxHealth) * 100, 0)) + "%", 52, handler.getHeight() - 62, true, Color.WHITE, Assets.andy16);
 
     // Stamina
-    g.drawImage(Assets.heart, 94, handler.getHeight() - 84, 64, 64, null);
+    g.drawImage(Assets.stamina, 94, handler.getHeight() - 84, 64, 64, null);
     Text.drawString(g, ((int) Utils.limitPrecision(((double) stamina.duration / character.getStats().stamina.duration) * 100, 0)) + "%", 126, handler.getHeight() - 62, true, Color.WHITE, Assets.andy16);
+
+    // TEMP
+    // Draw from mouse angle
+
+    if (weapon instanceof MeleeWeapon) {
+      final int mx = handler.getMouseManager().getMouseX(), my = handler.getMouseManager().getMouseY();
+      final int xx = (int) (x + width / 2 - handler.getCamera().getxOff());
+      final int yy = (int) (y + height / 2 - handler.getCamera().getyOff());
+      final double angle = Math.atan2(my - yy, mx - xx);
+
+      final int nx = (int) (weapon.getRange() * Math.cos(angle) + xx);
+      final int ny = (int) (weapon.getRange() * Math.sin(angle) + yy);
+
+      final int nx1 = (int) (weapon.getRange() * Math.cos(angle - ((MeleeWeapon) weapon).getAngle()) + xx);
+      final int ny1 = (int) (weapon.getRange() * Math.sin(angle - ((MeleeWeapon) weapon).getAngle()) + yy);
+
+      final int nx2 = (int) (weapon.getRange() * Math.cos(angle + ((MeleeWeapon) weapon).getAngle()) + xx);
+      final int ny2 = (int) (weapon.getRange() * Math.sin(angle + ((MeleeWeapon) weapon).getAngle()) + yy);
+
+      g.setColor(Color.RED);
+   /* g.drawLine(xx, yy, nx, ny);
+    g.drawLine(xx, yy, nx1, ny1);
+    g.drawLine(xx, yy, nx2, ny2);
+
+    g.drawLine(nx, ny, nx1, ny1);
+    g.drawLine(nx, ny, nx2, ny2);*/
+
+      Polygon p = new Polygon(new int[] { xx, nx1, nx, nx2 }, new int[] { yy, ny1, ny, ny2 }, 4);
+      g.drawPolygon(p);
+    }
   }
 
   public void postRender(final Graphics g) {
@@ -260,13 +303,15 @@ public class Player extends Creature {
 
   private void attack(final int mx, final int my) {
     if (weapon instanceof RangedWeapon) {
-      if (System.currentTimeMillis() - useTimer > ((RangedWeapon) weapon).getShootTime()) {
+      if (System.currentTimeMillis() - useTimer > ((RangedWeapon) weapon).getUseTime()) {
         useTimer = System.currentTimeMillis();
 
         shoot(mx, my);
       }
     } else if (weapon instanceof MeleeWeapon) {
-      if (System.currentTimeMillis() - useTimer > ((MeleeWeapon) weapon).getUseTime()) {
+      if (System.currentTimeMillis() - useTimer > ((MeleeWeapon) weapon).getUseTime() && (((MeleeWeapon) weapon).isAutoSwing() || !hasSwung)) {
+        hasSwung = true;
+
         useTimer = System.currentTimeMillis();
 
         slice(mx, my);
@@ -288,6 +333,33 @@ public class Player extends Creature {
   }
 
   private void slice(final int mx, final int my) {
+    for (final Entity e : handler.getWorld().getEntityManager().getEntities()) {
+      if (e == this)
+        continue;
+
+      if (insideWeaponBounds(e))
+        e.hurt((int) weapon.getDamage());
+    }
+  }
+
+  public boolean insideWeaponBounds(final Entity e) {
+    final int mx = handler.getMouseManager().getMouseX(), my = handler.getMouseManager().getMouseY();
+    final int xx = (int) (x + width / 2 - handler.getCamera().getxOff());
+    final int yy = (int) (y + height / 2 - handler.getCamera().getyOff());
+    final double angle = Math.atan2(my - yy, mx - xx);
+
+    final int nx = (int) (weapon.getRange() * Math.cos(angle) + xx);
+    final int ny = (int) (weapon.getRange() * Math.sin(angle) + yy);
+
+    final int nx1 = (int) (weapon.getRange() * Math.cos(angle - ((MeleeWeapon) weapon).getAngle()) + xx);
+    final int ny1 = (int) (weapon.getRange() * Math.sin(angle - ((MeleeWeapon) weapon).getAngle()) + yy);
+
+    final int nx2 = (int) (weapon.getRange() * Math.cos(angle + ((MeleeWeapon) weapon).getAngle()) + xx);
+    final int ny2 = (int) (weapon.getRange() * Math.sin(angle + ((MeleeWeapon) weapon).getAngle()) + yy);
+
+    Polygon p = new Polygon(new int[] { xx, nx1, nx, nx2 }, new int[] { yy, ny1, ny, ny2 }, 4);
+
+    return p.intersects(new Rectangle((int) (e.getX() - handler.getCamera().getxOff()), (int) (e.getY() - handler.getCamera().getyOff()), e.getWidth(), e.getHeight()));
   }
 
   public void stopDash() {

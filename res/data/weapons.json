@@ -16,7 +16,7 @@
     "clipSize": 12,
     "reloadTime": 600,
     "inaccuracy": 0.5,
-    "shootTime": 200
+    "useTime": 200
   },
   {
     "id": 1,
@@ -35,7 +35,7 @@
     "clipSize": 12,
     "reloadTime": 600,
     "inaccuracy": 0.5,
-    "shootTime": 200
+    "useTime": 200
   },
   {
     "id": 2,
@@ -54,7 +54,7 @@
     "clipSize": 12,
     "reloadTime": 600,
     "inaccuracy": 0.5,
-    "shootTime": 200
+    "useTime": 200
   },
   {
     "id": 3,
@@ -73,6 +73,22 @@
     "clipSize": 12,
     "reloadTime": 600,
     "inaccuracy": 0.5,
-    "shootTime": 200
+    "useTime": 200
+  },
+  {
+    "id": 4,
+    "type": 3,
+    "name": "Katana",
+    "description": "Just your ordinary Katana",
+    "texture": {
+      "name": "weapons",
+      "coords": [0, 1],
+      "size": [64, 32]
+    },
+    "damage": 60,
+    "range": 200,
+    "useTime": 600,
+    "angle": 45,
+    "autoSwing": false
   }
 ]

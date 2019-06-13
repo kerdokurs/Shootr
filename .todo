@@ -2,14 +2,18 @@ Shootr:
   Gameplay:
     Weapons:
       ☐ Random weapons
-      ☐ Melee @today
+      ✔ Melee @today @done(19-06-13 14:41)
 
     ☐ Items
     ☐ Characters
     ☐ Worlds
     ☐ Multiplayer
 
-    ☐ Enemies @today
+    Enemy:
+      ☐ Animation
+      ☐ Movement
+      ☐ Damage
+      ☐ Item/XP drops
   Graphics:
     ☐ Tiles
     ☐ Items
@@ -17,8 +21,6 @@ Shootr:
     ☐ Spritesheets to just sprites
   Inventory:
     ☐ Functional buttons (sort, etc.)
-  Assets:
-    ☐ Dynamically load spritesheets @today
   Tiles:
     ☐ Add dynamic spritesheets
   Character:
@@ -54,3 +56,7 @@ Shootr:
   Modding:
     ☐ Modding folder
     ☐ Loading custom assets and data
+    ☐ Dynamically load spritesheets
+
+Bugs:
+  ☐ Health lost for no reason

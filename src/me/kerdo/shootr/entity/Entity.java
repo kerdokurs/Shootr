@@ -36,6 +36,7 @@ public abstract class Entity {
   public abstract void render(final Graphics g);
 
   public abstract void die();
+
   public void hurt(final int dmg) {
     health -= dmg;
     if (health <= 0) {
@@ -44,19 +45,19 @@ public abstract class Entity {
     }
   }
 
-  public boolean checkEntityCollisions(final float xOff, final float yOff) {
+  public boolean checkEntityCollisions(final double xOff, final double yOff) {
     for (Entity e : handler.getWorld().getEntityManager().getEntities()) {
       if (e.equals(this))
         continue;
 
-      if (e.getCollisionBounds(0, 0).intersects(getCollisionBounds(xOff, yOff))) {
+      if (e.getCollisionBounds(0, 0).intersects(getCollisionBounds(xOff, yOff)))
         return true;
-      }
     }
+
     return false;
   }
 
-  public Rectangle getCollisionBounds(final float xOff, final float yOff) {
+  public Rectangle getCollisionBounds(final double xOff, final double yOff) {
     return new Rectangle((int) (x + bounds.x + xOff), (int) (y + bounds.y + yOff), bounds.width, bounds.height);
   }
 

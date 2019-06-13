@@ -28,6 +28,7 @@ public class EntityManager {
       Iterator<Entity> it = entities.iterator();
       while (it.hasNext()) {
         Entity e = it.next();
+        
         if (isOutOfBounds(e)) continue;
 
         e.tick(dt);

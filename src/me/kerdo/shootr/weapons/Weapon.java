@@ -61,6 +61,7 @@ public class Weapon {
 
       final double damage = weapon.get("damage").getAsDouble();
       final int range = weapon.get("range").getAsInt();
+      final int useTime = weapon.get("useTime").getAsInt();
 
       if (type == PISTOL || type == RIFLE || type == SNIPER) {
         final int bulletSpeed = weapon.get("bulletSpeed").getAsInt();
@@ -68,12 +69,13 @@ public class Weapon {
         final int clipSize = weapon.get("clipSize").getAsInt();
         final int reloadTime = weapon.get("reloadTime").getAsInt();
         final double inaccuracy = weapon.get("inaccuracy").getAsInt();
-        final int shootTime = weapon.get("shootTime").getAsInt();
 
+        new RangedWeapon(id, type, name, description, textureImage, damage, range, bulletSpeed, bulletSize, clipSize, reloadTime, inaccuracy, useTime);
+      } else if (type == SWORD) {
+        final int angle = weapon.get("angle").getAsInt();
+        final boolean autoSwing = weapon.get("autoSwing").getAsBoolean();
 
-        new RangedWeapon(id, type, name, description, textureImage, damage, range, bulletSpeed, bulletSize, clipSize, reloadTime, inaccuracy, shootTime);
-      } else if(type == SWORD) {
-        final int useTime = weapon.get("useTime").getAsInt();
+        new MeleeWeapon(id, type, name, description, textureImage, damage, range, useTime, angle, autoSwing);
       }
     }
   }

@@ -8,9 +8,9 @@ public class RangedWeapon extends Weapon {
   private final int clipSize;
   private final int reloadTime;
   private final double inaccuracy;
-  private final int shootTime;
+  private final int useTime;
 
-  public RangedWeapon(final int id, final int type, final String name, final String description, final BufferedImage texture, final double damage, final int range, final int bulletSpeed, final int bulletSize, final int clipSize, final int reloadTime, final double inaccuracy, final int shotsPerSecond) {
+  public RangedWeapon(final int id, final int type, final String name, final String description, final BufferedImage texture, final double damage, final int range, final int bulletSpeed, final int bulletSize, final int clipSize, final int reloadTime, final double inaccuracy, final int useTime) {
     super(id, type, name, description, texture, damage, range);
 
     this.bulletSpeed = bulletSpeed;
@@ -18,7 +18,7 @@ public class RangedWeapon extends Weapon {
     this.clipSize = clipSize;
     this.reloadTime = reloadTime;
     this.inaccuracy = inaccuracy;
-    this.shootTime = shotsPerSecond;
+    this.useTime = useTime;
   }
 
 
@@ -42,7 +42,7 @@ public class RangedWeapon extends Weapon {
     return inaccuracy;
   }
 
-  public int getShootTime() {
-    return shootTime;
+  public int getUseTime() {
+    return useTime;
   }
 }

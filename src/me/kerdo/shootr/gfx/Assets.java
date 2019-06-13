@@ -23,7 +23,7 @@ public class Assets {
   public static BufferedImage[] buttonBackground = new BufferedImage[2];
   public static BufferedImage[] arrowRight, arrowLeft;
 
-  public static BufferedImage heart;
+  public static BufferedImage heart, stamina;
 
   public static void init() {
     // Font loading
@@ -50,6 +50,7 @@ public class Assets {
     characterSelectionBackground = ImageLoader.loadImage("/textures/char_sel_background.png");
 
     heart = ImageLoader.loadImage("/textures/heart.png");
+    stamina = ImageLoader.loadImage("/textures/stamina.png");
 
     {
       Spritesheet arrowRightSpritesheet = new Spritesheet(ImageLoader.loadImage("/textures/arrow_right.png"));

@@ -11,6 +11,7 @@ import me.kerdo.shootr.utils.save.SaveWeaponTexture;
 
 import java.awt.image.BufferedImage;
 
+// FIXME: Fix this up, add stats, upgrade tree and more.
 public class Weapon {
   public static final int PISTOL = 0, RIFLE = 1, SNIPER = 2, SWORD = 3, GRENADE = 4;
 

@@ -1,8 +1,10 @@
 Shootr:
   Gameplay:
     Weapons:
-      ☐ Random weapons
       ✔ Melee @today @done(19-06-13 14:41)
+      ☐ Rework the whole system
+      ☐ Add stats and upgrade tree
+      ☐ Pistol autoshoot flag
 
     ☐ Items
     ☐ Characters

@@ -2,7 +2,6 @@ package me.kerdo.shootr.world;
 
 import me.kerdo.shootr.Handler;
 import me.kerdo.shootr.entity.EntityManager;
-import me.kerdo.shootr.entity.creature.Player;
 import me.kerdo.shootr.utils.Utils;
 import me.kerdo.shootr.weapon.BulletManager;
 
@@ -12,7 +11,6 @@ public class World {
   private final Handler handler;
 
   private final EntityManager entityManager;
-  private Player player;
 
   private final BulletManager bulletManager;
 
@@ -49,6 +47,8 @@ public class World {
 
     entityManager.render(g);
     bulletManager.render(g);
+
+    entityManager.getPlayer().postRender(g);
   }
 
   public Tile getTile(final int x, final int y) {
@@ -92,13 +92,5 @@ public class World {
 
   public BulletManager getBulletManager() {
     return bulletManager;
-  }
-
-  public Player getPlayer() {
-    return player;
-  }
-
-  public void setPlayer(final Player player) {
-    this.player = player;
   }
 }

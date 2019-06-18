@@ -44,15 +44,15 @@ public class BulletManager {
       for (int i = 0; i < handler.getWorld().getEntityManager().getEntities().size(); i++) {
         final Entity e = handler.getWorld().getEntityManager().getEntities().get(i);
 
-        if (e == handler.getWorld().getPlayer())
+        if (e == handler.getWorld().getEntityManager().getPlayer())
           continue;
 
         if (e.getY() + e.getWidth() < handler.getCamera().getyOff() || e.getY() > handler.getHeight() + handler.getCamera().getyOff() ||
                     e.getX() + e.getWidth() < handler.getCamera().getxOff() || e.getX() > handler.getWidth() + handler.getCamera().getxOff())
           continue;
 
-        final Rectangle eb = new Rectangle((int) (e.getX()), (int) (e.getY()), (int) e.getWidth(),
-                (int) e.getHeight());
+        final Rectangle eb = new Rectangle((int) (e.getX()), (int) (e.getY()), e.getWidth(),
+                e.getHeight());
 
         // TODO: MAX BULLET RANGE
         final Rectangle bb = new Rectangle((int) bx, (int) by, (int) br, (int) br);

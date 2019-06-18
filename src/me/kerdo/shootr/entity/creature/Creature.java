@@ -2,6 +2,7 @@ package me.kerdo.shootr.entity.creature;
 
 import me.kerdo.shootr.Handler;
 import me.kerdo.shootr.entity.Entity;
+import me.kerdo.shootr.entity.creature.player.Player;
 import me.kerdo.shootr.world.Tile;
 
 public abstract class Creature extends Entity {

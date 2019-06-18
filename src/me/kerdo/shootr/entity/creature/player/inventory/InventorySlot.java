@@ -1,4 +1,4 @@
-package me.kerdo.shootr.gfx.ui.inventory;
+package me.kerdo.shootr.entity.creature.player.inventory;
 
 import me.kerdo.shootr.Handler;
 import me.kerdo.shootr.gfx.Assets;
@@ -18,7 +18,7 @@ public class InventorySlot extends UIImageButton {
   private Item item;
 
   public InventorySlot(final Handler handler, final Inventory inventory, final int x, final int y, final int width, final int height, final UIClickable clickable, final BufferedImage texture) {
-    super(handler, x, y, width, height, clickable, new BufferedImage[] { texture }, "");
+    super(handler, x, y, width, height, clickable, new BufferedImage[] { texture });
     this.inventory = inventory;
   }
 

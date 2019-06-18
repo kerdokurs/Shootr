@@ -1,19 +1,21 @@
 package me.kerdo.shootr.entity;
 
-import javafx.print.PageLayout;
 import me.kerdo.shootr.Handler;
-import me.kerdo.shootr.entity.creature.Player;
+import me.kerdo.shootr.entity.creature.player.Player;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
+import java.util.List;
 
 public class EntityManager {
   private final Handler handler;
 
-  private ArrayList<Entity> entities = new ArrayList<Entity>();
+  private final List<Entity> entities = new ArrayList<>();
+  private Player player;
+
   private Comparator<Entity> comp = (final Entity a, final Entity b) -> {
     if (a.getY() + a.getHeight() < b.getY() + b.getHeight())
       return -1;
@@ -30,7 +32,7 @@ public class EntityManager {
       Iterator<Entity> it = entities.iterator();
       while (it.hasNext()) {
         Entity e = it.next();
-        
+
         if (!(e instanceof Player) && isOutOfBounds(e)) continue;
 
         e.tick(dt);
@@ -68,7 +70,7 @@ public class EntityManager {
   }
 
 
-  public void addEntity(Entity e) {
+  public void addEntity(final Entity e) {
     entities.add(e);
   }
 
@@ -76,11 +78,16 @@ public class EntityManager {
     return handler;
   }
 
-  public ArrayList<Entity> getEntities() {
+  public List<Entity> getEntities() {
     return entities;
   }
 
-  public void setEntities(ArrayList<Entity> entities) {
-    this.entities = entities;
+  public Player getPlayer() {
+    return player;
+  }
+
+  public void setPlayer(final Player player) {
+    this.player = player;
+    addEntity(player);
   }
 }

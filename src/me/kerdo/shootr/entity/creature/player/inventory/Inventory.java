@@ -1,6 +1,7 @@
-package me.kerdo.shootr.gfx.ui.inventory;
+package me.kerdo.shootr.entity.creature.player.inventory;
 
 import me.kerdo.shootr.Handler;
+import me.kerdo.shootr.entity.creature.player.panel.ControlPanel;
 import me.kerdo.shootr.gfx.Assets;
 import me.kerdo.shootr.gfx.ui.UIObject;
 import me.kerdo.shootr.item.Item;
@@ -15,11 +16,13 @@ public class Inventory extends UIObject {
   public static int ROWS = 6, COLS = 5;
   public static int WIDTH = 2 * InventorySlot.PADDING + InventorySlot.WIDTH * COLS + (COLS - 1) * InventorySlot.PADDING,
           HEIGHT = 2 * InventorySlot.PADDING + InventorySlot.HEIGHT * ROWS + (ROWS - 1) * InventorySlot.PADDING;
+  private final ControlPanel controlPanel;
 
   private List<InventorySlot> slots = new ArrayList<>();
 
-  public Inventory(final Handler handler, final int x, final int y, final int width, final int height) {
+  public Inventory(final Handler handler, final int x, final int y, final int width, final int height, final ControlPanel controlPanel) {
     super(handler, x, y, width, height);
+    this.controlPanel = controlPanel;
 
     for (int _y = 0; _y < ROWS; _y++)
       for (int _x = 0; _x < COLS; _x++)
@@ -27,6 +30,8 @@ public class Inventory extends UIObject {
         }, Assets.inventorySlotBackground));
 
     slots.get(0).setItem(Item.ITEMS[0]);
+
+    visible = false;
   }
 
   @Override

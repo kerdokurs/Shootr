@@ -9,11 +9,9 @@ import java.awt.image.BufferedImage;
 
 public class UIImageButton extends UIButton {
   protected BufferedImage[] frames;
-  protected String tooltip;
 
-  public UIImageButton(final Handler handler, final int x, final int y, final int width, final int height, final UIClickable clickable, final BufferedImage[] frames, final String tooltip) {
+  public UIImageButton(final Handler handler, final int x, final int y, final int width, final int height, final UIClickable clickable, final BufferedImage[] frames) {
     super(handler, x, y, width, height, clickable);
-    this.tooltip = tooltip;
 
     this.frames = frames;
   }
@@ -61,9 +59,5 @@ public class UIImageButton extends UIButton {
 
   public void setFrames(final BufferedImage[] frames) {
     this.frames = frames;
-  }
-
-  public String getTooltip() {
-    return tooltip;
   }
 }

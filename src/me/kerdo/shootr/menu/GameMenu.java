@@ -3,7 +3,7 @@ package me.kerdo.shootr.menu;
 import com.google.gson.Gson;
 import me.kerdo.shootr.Handler;
 import me.kerdo.shootr.entity.creature.Enemy;
-import me.kerdo.shootr.entity.creature.Player;
+import me.kerdo.shootr.entity.creature.player.Player;
 import me.kerdo.shootr.utils.Utils;
 import me.kerdo.shootr.utils.save.SaveObject;
 import me.kerdo.shootr.world.World;
@@ -24,15 +24,13 @@ public class GameMenu extends Menu {
 
     final SaveObject saveObject = gson.fromJson(data, SaveObject.class);
 
-    world.getEntityManager().addEntity(new Player(handler, saveObject.player));
+    world.getEntityManager().setPlayer(new Player(handler, saveObject.player));
 
     // TEMP
     handler.getWorld().getEntityManager().addEntity(new Enemy(handler, 300, 300, 32, 32, 400));
     handler.getWorld().getEntityManager().addEntity(new Enemy(handler, 400, 300, 32, 32, 400));
     handler.getWorld().getEntityManager().addEntity(new Enemy(handler, 300, 400, 32, 32, 400));
     handler.getWorld().getEntityManager().addEntity(new Enemy(handler, 400, 400, 32, 32, 400));
-
-    uiManager.addObject(handler.getWorld().getPlayer().getInventory());
   }
 
   @Override

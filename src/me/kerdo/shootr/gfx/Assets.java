@@ -20,6 +20,8 @@ public class Assets {
 
   public static BufferedImage inventoryBackground,
           inventorySlotBackground, itemDescriptionBackground;
+  public static BufferedImage controlPanelBackground;
+  public static BufferedImage[] controlPanelTabBackground = new BufferedImage[3];
 
   public static BufferedImage weaponSlotBackground;
 
@@ -51,6 +53,15 @@ public class Assets {
     inventorySlotBackground = ImageLoader.loadImage("/textures/inventory/inventory_slot.png");
     itemDescriptionBackground = ImageLoader.loadImage("/textures/inventory/item_description_background.png");
 
+    controlPanelBackground = ImageLoader.loadImage("/textures/control_panel_background.png");
+
+    {
+      final Spritesheet controlPanelTabBackgroundSheet = new Spritesheet(ImageLoader.loadImage("/textures/panel/tab_background.png"));
+
+      for (int i = 0; i < 3; i++)
+        controlPanelTabBackground[i] = controlPanelTabBackgroundSheet.crop(i, 0, 1, 1);
+    }
+
     weaponSlotBackground = ImageLoader.loadImage("/textures/inventory/weapon_slot_background.png");
 
     buttonBackground[0] = ImageLoader.loadImage("/textures/menu/button_background.png");
@@ -62,7 +73,7 @@ public class Assets {
     stamina = ImageLoader.loadImage("/textures/stamina.png");
 
     {
-      Spritesheet arrowRightSpritesheet = new Spritesheet(ImageLoader.loadImage("/textures/arrow_right.png"));
+      final Spritesheet arrowRightSpritesheet = new Spritesheet(ImageLoader.loadImage("/textures/arrow_right.png"));
       BufferedImage sheet = arrowRightSpritesheet.getSheet();
       int amt = sheet.getWidth() / 16;
 

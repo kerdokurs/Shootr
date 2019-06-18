@@ -1,7 +1,7 @@
 package me.kerdo.shootr.entity.creature;
 
 import me.kerdo.shootr.Handler;
-import me.kerdo.shootr.entity.Entity;
+import me.kerdo.shootr.entity.creature.player.Player;
 import me.kerdo.shootr.gfx.Assets;
 import me.kerdo.shootr.gfx.Text;
 
@@ -16,7 +16,7 @@ public class Enemy extends Creature {
   public void tick(final double dt) {
     move(dt);
 
-    final Player player = handler.getWorld().getPlayer();
+    final Player player = handler.getWorld().getEntityManager().getPlayer();
 
     double distance = Math.hypot(x - player.getX(), y - player.getY());
 

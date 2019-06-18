@@ -12,7 +12,7 @@ public abstract class Menu {
   public Menu(final Handler handler) {
     this.handler = handler;
 
-    this.uiManager = new UIManager();
+    this.uiManager = new UIManager(handler);
   }
 
   public abstract void tick(final double dt);

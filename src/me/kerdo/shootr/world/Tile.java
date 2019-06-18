@@ -17,14 +17,16 @@ public class Tile {
   private final int id;
   private final BufferedImage texture;
   private final boolean solid;
+  private final Rectangle bounds;
 
   public static final int TILE_WIDTH = 64, TILE_HEIGHT = 64;
 
-  public Tile(final String name, int id, final BufferedImage texture, final boolean solid) {
+  public Tile(final String name, int id, final BufferedImage texture, final boolean solid, final Rectangle bounds) {
     this.name = name;
     this.id = id;
     this.texture = texture;
     this.solid = solid;
+    this.bounds = bounds;
 
     TILES[id] = this;
   }
@@ -34,6 +36,11 @@ public class Tile {
 
   public void render(final Graphics g, final int x, final int y) {
     g.drawImage(texture, x, y, TILE_WIDTH, TILE_HEIGHT, null);
+
+    // Add different sized hit boxes
+
+    /*g.setColor(Color.WHITE);
+    g.drawRect(x + bounds.x, y + bounds.y, bounds.width, bounds.height);*/
   }
 
   public static void init() {
@@ -54,8 +61,11 @@ public class Tile {
       final int textX = textCoords.get(0).getAsInt(),
               textY = textCoords.get(1).getAsInt();
 
+      final JsonArray boundsObj = obj.get("bounds").getAsJsonArray();
+      final Rectangle bounds = new Rectangle(boundsObj.get(0).getAsInt(), boundsObj.get(1).getAsInt(), TILE_WIDTH - 2 * boundsObj.get(2).getAsInt(), TILE_HEIGHT - 2 * boundsObj.get(3).getAsInt());
 
-      new Tile(name, id, Assets.spritesheets.get("default").crop32(textX, textY), solid);
+
+      new Tile(name, id, Assets.spritesheets.get("default").crop32(textX, textY), solid, bounds);
     });
   }
 
@@ -69,5 +79,9 @@ public class Tile {
 
   public boolean isSolid() {
     return solid;
+  }
+
+  public Rectangle getBounds() {
+    return bounds;
   }
 }

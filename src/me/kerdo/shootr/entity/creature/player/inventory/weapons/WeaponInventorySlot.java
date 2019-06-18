@@ -1,4 +1,4 @@
-package me.kerdo.shootr.gfx.ui.inventory.weapons;
+package me.kerdo.shootr.entity.creature.player.inventory.weapons;
 
 import me.kerdo.shootr.Handler;
 import me.kerdo.shootr.gfx.Assets;

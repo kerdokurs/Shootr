@@ -224,6 +224,12 @@ public class Game implements Runnable {
       return;
 
     System.exit(1);
+    display.getFrame().dispose();
+    try {
+      thread.join();
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
   }
 
   public int getWidth() {

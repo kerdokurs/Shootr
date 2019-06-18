@@ -2,88 +2,78 @@
   {
     "name": "Error",
     "id": 0,
-    "texture": [
-      0,
-      0
-    ],
-    "solid": false
+    "texture": [0, 0],
+    "solid": false,
+    "bounds": [0, 0, 0, 0]
   },
   {
     "name": "Stone wall 1",
     "id": 1,
-    "texture": [
-      1,
-      0
-    ],
-    "solid": true
+    "texture": [1, 0],
+    "solid": true,
+    "bounds": [0, 0, 0, 0]
   },
   {
     "name": "Stone wall 2",
     "id": 2,
-    "texture": [
-      2,
-      0
-    ],
-    "solid": true
+    "texture": [2, 0],
+    "solid": true,
+    "bounds": [0, 0, 0, 0]
   },
   {
     "name": "Stone wall 3",
     "id": 3,
-    "texture": [
-      3,
-      0
-    ],
-    "solid": true
+    "texture": [3, 0],
+    "solid": true,
+    "bounds": [0, 0, 0, 0]
   },
   {
     "name": "Stone wall 4",
     "id": 4,
-    "texture": [
-      4,
-      0
-    ],
-    "solid": true
+    "texture": [4, 0],
+    "solid": true,
+    "bounds": [0, 0, 0, 0]
   },
   {
     "name": "Cornerstone UL",
     "id": 5,
-    "texture": [
-      1,
-      1
-    ],
-    "solid": true
+    "texture": [1, 1],
+    "solid": true,
+    "bounds": [0, 0, 0, 0]
   },
   {
     "name": "Cornerstone UR",
     "id": 6,
-    "texture": [
-      2,
-      1
-    ],
-    "solid": true
+    "texture": [2, 1],
+    "solid": true,
+    "bounds": [0, 0, 0, 0]
   },
   {
     "name": "Cornerstone DR",
     "id": 7,
-    "texture": [
-      3,
-      1
-    ],
-    "solid": true
+    "texture": [3, 1],
+    "solid": true,
+    "bounds": [0, 0, 0, 0]
   },
   {
     "name": "Cornerstone DL",
     "id": 8,
     "texture": [4, 1],
-    "solid": true
+    "solid": true,
+    "bounds": [0, 0, 0, 0]
   },
   {
     "name": "Grass",
     "id": 9,
-    "texture": [
-      0,
-      2
-    ],
-    "solid": false
+    "texture": [0, 2],
+    "solid": false,
+    "bounds": [0, 0, 0, 0]
+  },
+  {
+    "name": "Test",
+    "id": 10,
+    "texture": [0, 3],
+    "solid": true,
+    "bounds": [4, 4, 4, 4]
   }
 ]

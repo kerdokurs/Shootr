@@ -31,7 +31,7 @@ public class CharacterSelectionMenu extends Menu {
 
       selectedCharacter = Character.CHARACTERS[selectedCharacterIndex];
       selectedCharacter.getPortrait().setIndex(frameIndex);
-    }, Assets.arrowLeft, "Previous Character");
+    }, Assets.arrowLeft);
 
     nextCharacterButton = new UIImageButton(handler, 232, 364 - 24, 48, 48, object -> {
       selectedCharacterIndex++;
@@ -43,10 +43,10 @@ public class CharacterSelectionMenu extends Menu {
 
       selectedCharacter = Character.CHARACTERS[selectedCharacterIndex];
       selectedCharacter.getPortrait().setIndex(frameIndex);
-    }, Assets.arrowRight, "Next Character");
+    }, Assets.arrowRight);
 
     selectButton = new UIImageButton(handler, handler.getWidth() - 68, handler.getHeight() - 68, 48, 48, object -> {
-    }, Assets.arrowRight, "Select character");
+    }, Assets.arrowRight);
 
     uiManager.addObject(prevCharacterButton);
     uiManager.addObject(nextCharacterButton);

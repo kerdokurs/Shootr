@@ -50,6 +50,9 @@ public abstract class UIObject {
 
   public void setVisible(final boolean visible) {
     this.visible = visible;
+
+    if (visible == false)
+      hovering = false;
   }
 
   public boolean isHovering() {

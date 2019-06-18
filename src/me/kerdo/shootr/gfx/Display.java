@@ -36,6 +36,9 @@ public class Display {
     canvas.setMinimumSize(new Dimension(width, height));
     canvas.setFocusable(false);
 
+    canvas.setFocusTraversalKeysEnabled(false);
+    frame.setFocusTraversalKeysEnabled(false);
+
     frame.add(canvas);
     frame.pack();
   }
